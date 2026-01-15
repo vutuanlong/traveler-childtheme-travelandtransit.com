@@ -42,6 +42,17 @@ if ( ! class_exists( 'STAdminTourNew' ) ) {
 							],
 						],
 					],
+
+					[
+						'label' => __( 'Custom Tour Info', 'traveler-childtheme' ),
+						'id'    => 'Custom_tour_info',
+						'type'  => 'tab',
+					],
+					[
+						'label'     => __( 'Start Time', 'traveler-childtheme' ),
+						'type'      => 'text',
+						'id'        => 'start_time_custom',
+					],
 				],
 			];
 
