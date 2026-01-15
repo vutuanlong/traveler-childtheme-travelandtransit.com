@@ -1,0 +1,141 @@
+/*
+Theme Name:     Traveler Child Theme for travelandtransit.com
+Description:    Traveler Child Theme for travelandtransit.com
+Theme URI:      https://travelerwp.com/
+Author:         the ShineTheme
+Author URI:     http://shinetheme.com
+Version:        1.0
+Template:       traveler
+*/
+
+.st_wrap_list_package{
+    border-color: #e1e1e1;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.st_content_list_package * {
+    border-color: #e1e1e1;
+}
+
+.st_content_list_package table{
+    width: 100%;
+    text-align: center;
+    border-spacing: 2px;
+    border-collapse: separate;
+    margin-bottom: 20px;
+}
+.st_content_list_package table tr th {
+    padding: 13px 0px;
+    font-size: 16px;
+    font-weight: normal;
+	background: #16283a;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.st_content_list_package table tr:nth-child(odd) {
+    color: #444444;
+}
+.st_content_list_package table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.st_content_list_package table td{
+    padding: 10px 0;
+}
+
+.st_content_list_package table tr:nth-child(even) {
+    color: #444444;
+}
+.st_content_list_package table tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+.st-form-package_new select{
+    border-color: #ccc;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    color: initial;
+    padding: 0 15px;
+    padding-left: 4px;
+    background-color: #fff;
+}
+
+.wrap_select_adu_child{
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    padding-top: 15px;
+    display: none;
+}
+.wrap_select_adu_child.active{
+    display: grid;
+}
+
+.st_combobox-list-display{
+    border: 1px solid #ccc;
+    font-weight: 500;
+    padding: 7px 17px;
+    position: relative;
+    cursor: pointer;
+}
+
+.box_select{
+    position: relative;
+}
+.bg_select{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.box_select ul {
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    background-color: #ffffff;
+    border-color: #ccc;
+    padding: 0;
+}
+.box_select.active ul{
+    display: block;
+}
+.box_select.active .bg_select{
+    display: block;
+}
+.box_select ul li{
+    width: 100%;
+    display: inline-block;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+.box_select ul li label {
+	cursor: pointer;
+}
+.box_select ul li + li{
+    border-top: 1px solid #e5e5e5;
+}
+
+.box_package_price{
+    display: none;
+}
+
+.box_package_price.active{
+    display: block;
+}
+
+.box_package_price .st_combobox-list-display:after{
+    content: "\f107";
+    font-family: 'FontAwesome' !important;
+}
+
+.single-st_tours .st-package-popup .item .footer {
+	border-top: 1px solid #d7dce3;
+	padding: 5px;
+	display: flex;
+	justify-content: end;
+}
+.single-st_tours .st-package-popup .item .footer button {
+	padding: 10px 30px;
+}
