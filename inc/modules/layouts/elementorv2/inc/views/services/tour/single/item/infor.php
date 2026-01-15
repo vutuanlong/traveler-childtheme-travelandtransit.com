@@ -46,21 +46,14 @@ $icon_language_single_tour = st()->get_option('icon_language_single_tour', '<i c
         <div class="col-6 col-sm-6 col-md-3">
             <div class="item d-flex align-items-lg-center">
                 <div class="icon">
-                    <?php echo htmlspecialchars_decode($icon_groupsize_single_tour);?>
+                    <?php echo htmlspecialchars_decode($icon_duration_single_tour);?>
                 </div>
                 <div class="info">
-                    <div class="name"><?php echo __('Group Size', 'traveler'); ?></div>
+                    <div class="name"><?php echo __('Start Time', 'traveler'); ?></div>
                     <p class="value">
                         <?php
-                        $max_people = get_post_meta(get_the_ID(), 'max_people', true);
-                        if (empty($max_people) or $max_people == 0 or $max_people < 0) {
-                            echo __('Unlimited', 'traveler');
-                        } else {
-                            if ($max_people == 1)
-                                echo sprintf(__('%s person', 'traveler'), $max_people);
-                            else
-                                echo sprintf(__('%s people', 'traveler'), $max_people);
-                        }
+                        $start_time = get_post_meta(get_the_ID(), 'start_time_custom', true);
+                        echo esc_html($start_time);
                         ?>
                     </p>
                 </div>
