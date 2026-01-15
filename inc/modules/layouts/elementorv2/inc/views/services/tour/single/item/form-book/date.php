@@ -109,7 +109,7 @@ if ( $list_package && $tour_price_by == 'fixed' && isset( $list_package[0] ) && 
 	<div class="form-group form-more-extra-package_new st-form-package_new">
 		<div class="box_select">
 			<div class="st_combobox-list-display">
-				<span><?php echo $package_select ? $package_select : esc_html__( 'Choose a package', 'traveler' ) ?></span>
+				<span><?php echo $package_select ? $package_select : esc_html__( 'Select a vehicle', 'traveler' ) ?></span>
 			</div>
 			<input type="hidden" name="package_select" value="<?php echo trim( $package_select ); ?>">
 			<ul>
