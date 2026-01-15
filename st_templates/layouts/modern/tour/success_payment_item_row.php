@@ -102,18 +102,18 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		$user_id   = $obj_hotel->post_author;
 		?>
 		<?php if ( $contact_email = get_post_meta( $object_id, 'contact_email', true ) ) { ?>
-			<li><span class="label"><?php echo __( 'Email', 'traveler' ); ?></span><span class="value"><?php echo esc_html( $contact_email ); ?></span></li>
+			<li><span class="label"><?php echo __( 'Email', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_html( $contact_email ); ?></span></li>
 		<?php } ?>
 
 		<?php if ( $max_people = get_post_meta( $object_id, 'max_people', true ) ) { ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Max people', 'traveler' ) ?>
+					<?php echo __( 'Max people', 'traveler-childtheme' ) ?>
 				</span>
 				<span class="value">
 					<?php
 					if ( (int) $max_people == 0 ) {
-						$max_people = __( 'Unlimited', 'traveler' );
+						$max_people = __( 'Unlimited', 'traveler-childtheme' );
 					}
 					echo esc_html( $max_people );
 					?>
@@ -131,7 +131,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 					$price_ori            = $people_price_package['package_price_fixed'];
 					?>
 					<li>
-						<span class="label"><?php echo __( 'Package', 'traveler' ); ?></span>
+						<span class="label"><?php echo __( 'Package', 'traveler-childtheme' ); ?></span>
 						<span class="value">
 							<?php echo esc_html( $package_name ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?>
 						</span>
@@ -145,7 +145,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		<?php if ( $adult_number ) { ?>
 			<li>
 				<span class="label">
-					<?php _e( 'No. Adult', 'traveler' ) ?>
+					<?php _e( 'No. Adult', 'traveler-childtheme' ) ?>
 				</span>
 				<span class="value">
 					<?php echo esc_html( $adult_number ) ?>
@@ -155,7 +155,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		<?php if ( $child_number ) { ?>
 			<li>
 				<span class="label">
-					<?php _e( 'No. Children', 'traveler' ) ?>
+					<?php _e( 'No. Children', 'traveler-childtheme' ) ?>
 				</span>
 				<span class="value">
 					<?php echo esc_html( $child_number ) ?>
@@ -165,7 +165,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		<?php if ( $infant_number ) { ?>
 			<li>
 				<span class="label">
-					<?php _e( 'No. Infant', 'traveler' ) ?>
+					<?php _e( 'No. Infant', 'traveler-childtheme' ) ?>
 				</span>
 				<span class="value">
 					<?php echo esc_html( $infant_number ) ?>
@@ -180,7 +180,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 				<?php if ( $check_in ) { ?>
 					<li>
 						<span class="label">
-							<?php echo __( 'Departure date', 'traveler' ); ?>
+							<?php echo __( 'Departure date', 'traveler-childtheme' ); ?>
 						</span>
 						<span class="value">
 							<?php echo date_i18n( TravelHelper::getDateFormat(), strtotime( $check_in ) ); ?>
@@ -204,7 +204,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 					?>
 					<li>
 						<span class="label">
-							<?php echo __( 'Departure date', 'traveler' ); ?>
+							<?php echo __( 'Departure date', 'traveler-childtheme' ); ?>
 						</span>
 						<span class="value">
 							<?php echo date_i18n( TravelHelper::getDateFormat(), strtotime( $check_in ) ); ?>
@@ -224,12 +224,12 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 				<?php
 			}
 		} else {
-			echo '<li><strong>' . __( 'Tour type', 'traveler' ) . '</strong>: ' . __( 'Fixed Departure', 'traveler' ) . '</li>';
+			echo '<li><strong>' . __( 'Tour type', 'traveler-childtheme' ) . '</strong>: ' . __( 'Fixed Departure', 'traveler-childtheme' ) . '</li>';
 			?>
 			<?php if ( $check_in ) { ?>
 				<li>
 					<span class="label">
-						<?php echo __( 'Start', 'traveler' ) ?>
+						<?php echo __( 'Start', 'traveler-childtheme' ) ?>
 					</span>
 					<span class="value">
 						<?php
@@ -243,7 +243,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 				<?php if ( $check_out ) { ?>
 				<li>
 					<span class="label">
-						<?php echo __( 'End', 'traveler' ) ?>
+						<?php echo __( 'End', 'traveler-childtheme' ) ?>
 					</span>
 					<span class="value">
 						<?php
@@ -262,7 +262,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		if ( ! empty( $starttime ) ) {
 			?>
 			<li>
-				<span class="label"><?php echo __( 'Start time:', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Start time:', 'traveler-childtheme' ); ?></span>
 				<span class="value">
 					<?php echo esc_html( $starttime ); ?>
 				</span>
@@ -276,7 +276,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 
 		if ( $check_extra ) :
 			?>
-			<li><span class="label"><?php echo __( 'Extra:', 'traveler' ); ?></span>
+			<li><span class="label"><?php echo __( 'Extra:', 'traveler-childtheme' ); ?></span>
 				<span class="value">
 
 				</span>
@@ -295,7 +295,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 					if ( $number_item > 0 ) {
 						?>
 						<span>
-						<?php echo esc_html( $extras['title'][ $name ] ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+						<?php echo esc_html( $extras['title'][ $name ] ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 						</span> <br/>
 						<?php
 					}
@@ -321,7 +321,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		) {
 			?>
 			<?php if ( ! empty( $hotel_package ) and is_array( $hotel_package ) && count( $hotel_package ) ) { ?>
-				<li><span class="label"><?php echo __( 'Hotel Package:', 'traveler' ); ?></span></li>
+				<li><span class="label"><?php echo __( 'Hotel Package:', 'traveler-childtheme' ); ?></span></li>
 				<li class="extra-value">
 					<?php
 					foreach ( $hotel_package as $name => $number ) :
@@ -337,7 +337,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 							if ( $number_item > 0 ) {
 								?>
 								<span>
-									<?php echo esc_html( $number->hotel_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+									<?php echo esc_html( $number->hotel_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 								</span>
 								<br/>
 								<?php
@@ -350,7 +350,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 			}
 			if ( ! empty( $activity_package ) and is_array( $activity_package ) && count( $activity_package ) ) {
 				?>
-				<li><span class="label"><?php echo __( 'Activity Package:', 'traveler' ); ?></span></li>
+				<li><span class="label"><?php echo __( 'Activity Package:', 'traveler-childtheme' ); ?></span></li>
 				<li class="extra-value">
 					<?php
 					foreach ( $activity_package as $name => $number ) :
@@ -367,7 +367,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 								?>
 
 								<span>
-									<?php echo esc_html( $number->activity_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+									<?php echo esc_html( $number->activity_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 								</span>
 								<br/>
 								<?php
@@ -381,7 +381,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 			}
 			if ( ! empty( $car_package ) and is_array( $car_package ) && count( $car_package ) ) {
 				?>
-				<li><span class="label"><?php echo __( 'Car Package:', 'traveler' ); ?></span></li>
+				<li><span class="label"><?php echo __( 'Car Package:', 'traveler-childtheme' ); ?></span></li>
 				<li class="extra-value">
 					<?php
 					foreach ( $car_package as $name => $number ) :
@@ -398,7 +398,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 								?>
 
 								<span>
-									<?php echo esc_html( $number->car_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+									<?php echo esc_html( $number->car_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 								</span>
 								<br/>
 								<?php
@@ -413,7 +413,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 				?>
 				<li>
 					<span class="label">
-						<?php echo __( 'Flight Package:', 'traveler' ); ?>
+						<?php echo __( 'Flight Package:', 'traveler-childtheme' ); ?>
 					</span>
 				</li>
 				<li class="extra-value">
@@ -437,7 +437,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 								?>
 								<span><?php echo esc_html( $number->flight_origin ); ?> - <?php echo esc_html( $number->flight_destination ); ?></span> :
 								<span>
-									<?php echo esc_html( $number->car_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+									<?php echo esc_html( $number->car_name ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_html( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 								</span>
 								<br/>
 								<?php

@@ -39,7 +39,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 			if ( empty( $gateways ) ) {
 				return [
 					'status'  => false,
-					'message' => __( 'Sorry! No payment gateway available', 'traveler' ),
+					'message' => __( 'Sorry! No payment gateway available', 'traveler-childtheme' ),
 				];
 			}
 			$payment_gateway_id   = STInput::post( 'st_payment_gateway', $selected );
@@ -48,7 +48,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 				$payment_gateway_name = apply_filters( 'st_payment_gateway_' . $payment_gateway_id . '_name', $payment_gateway_id );
 				return [
 					'status'  => false,
-					'message' => sprintf( __( 'Sorry! Payment Gateway: <code>%s</code> is not available for this item!', 'traveler' ), $payment_gateway_name ),
+					'message' => sprintf( __( 'Sorry! Payment Gateway: <code>%s</code> is not available for this item!', 'traveler-childtheme' ), $payment_gateway_name ),
 				];
 			}
 			// Action before submit form
@@ -59,7 +59,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 				if ( ! self::check_cart() and ! STInput::post( 'order_id' ) ) {
 					return [
 						'status'  => false,
-						'message' => __( 'Your cart is currently empty.', 'traveler' ),
+						'message' => __( 'Your cart is currently empty.', 'traveler-childtheme' ),
 						'code'    => '1',
 					];
 				}
@@ -107,7 +107,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 			if ( ! $term_condition ) {
 				return [
 					'status'  => false,
-					'message' => __( 'Please accept our terms and conditions', 'traveler' ),
+					'message' => __( 'Please accept our terms and conditions', 'traveler-childtheme' ),
 				];
 			}
 			$form_validate = self::validate_checkout_fields();
@@ -147,7 +147,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 					$errors    = $recaptcha['error-codes'];
 					$mes_error = '';
 					foreach ( $errors as $key => $err ) {
-						$mes_error .= esc_html__( 'Error captcha:', 'traveler' ) . ' ' . $err . '<br>';
+						$mes_error .= esc_html__( 'Error captcha:', 'traveler-childtheme' ) . ' ' . $err . '<br>';
 					}
 					return [
 						'status'        => false,
@@ -157,7 +157,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 				}
 			}
 			$post = [
-				'post_title'  => __( 'Order', 'traveler' ) . ' - ' . date( get_option( 'date_format' ) ) . ' @ ' . date( get_option( 'time_format' ) ),
+				'post_title'  => __( 'Order', 'traveler-childtheme' ) . ' - ' . date( get_option( 'date_format' ) ) . ' @ ' . date( get_option( 'time_format' ) ),
 				'post_type'   => 'st_order',
 				'post_status' => 'publish',
 			];
@@ -258,7 +258,7 @@ if ( ! class_exists( 'STCartNew' ) ) {
 			} else {
 				return [
 					'status'  => false,
-					'message' => __( 'Can not save order.', 'traveler' ),
+					'message' => __( 'Can not save order.', 'traveler-childtheme' ),
 				];
 			}
 		}
@@ -279,19 +279,19 @@ if ( ! class_exists( 'STCartNew' ) ) {
 			if ( ! $item_id ) {
 				$name = '';
 				if ( $sc == 'add-hotel-booking' ) {
-					$name = __( 'Hotel', 'traveler' );
+					$name = __( 'Hotel', 'traveler-childtheme' );
 				} elseif ( $sc == 'add-rental-booking' ) {
-					$name = __( 'Rental', 'traveler' );
+					$name = __( 'Rental', 'traveler-childtheme' );
 				} elseif ( $sc == 'add-car-booking' ) {
-					$name = __( 'Car', 'traveler' );
+					$name = __( 'Car', 'traveler-childtheme' );
 				} elseif ( $sc == 'add-tour-booking' ) {
-					$name = __( 'Tour', 'traveler' );
+					$name = __( 'Tour', 'traveler-childtheme' );
 				} elseif ( $sc == 'add-activity-booking' ) {
-					$name = __( 'Activity', 'traveler' );
+					$name = __( 'Activity', 'traveler-childtheme' );
 				}
 				$return = [
 					'status'  => false,
-					'message' => sprintf( __( 'Please choose a %s item ', 'traveler' ), $name ),
+					'message' => sprintf( __( 'Please choose a %s item ', 'traveler-childtheme' ), $name ),
 				];
 			} else {
 				$post_type   = get_post_type( $item_id );

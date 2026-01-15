@@ -14,7 +14,7 @@ $item_id = isset($_GET['order_item_id']) ? $_GET['order_item_id'] : false;
 $order_item_id = get_post_meta($item_id, 'item_id', true);
 $section = isset($_GET['section']) ? $_GET['section'] : false;
 if (!isset($page_title)) {
-    $page_title = __('Edit Tour Booking', 'traveler');
+    $page_title = __('Edit Tour Booking', 'traveler-childtheme');
 }
 $currency = TravelHelper::_get_currency_book_history($item_id);
 
@@ -35,16 +35,16 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                     <div id="poststuff">
                         <div class="postbox">
                             <div class="handlediv"
-                                 title="<?php _e('Click to toggle', 'traveler') ?>">
+                                 title="<?php _e('Click to toggle', 'traveler-childtheme') ?>">
                                 <br>
                             </div>
                             <h3 class="hndle ui-sortable-handle">
-                                <span><?php _e('Order Information', 'traveler') ?></span>
+                                <span><?php _e('Order Information', 'traveler-childtheme') ?></span>
                             </h3>
                             <div class="inside">
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Booker ID', 'traveler') ?>
+                                           for=""><?php _e('Booker ID', 'traveler-childtheme') ?>
                                         <span
                                                 class="require"> (*)</span></label>
                                     <div class="controls">
@@ -71,7 +71,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 <?php ob_start(); ?>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer First Name', 'traveler') ?>
+                                           for=""><?php _e('Customer First Name', 'traveler-childtheme') ?>
                                         <span
                                                 class="require"> (*)</span></label>
                                     <div class="controls">
@@ -86,7 +86,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer Last Name', 'traveler') ?>
+                                           for=""><?php _e('Customer Last Name', 'traveler-childtheme') ?>
                                         <span
                                                 class="require"> (*)</span></label>
                                     <div class="controls">
@@ -101,7 +101,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer Email', 'traveler') ?>
+                                           for=""><?php _e('Customer Email', 'traveler-childtheme') ?>
                                         <span class="require"> (*)</span></label>
                                     <div class="controls">
                                         <?php
@@ -115,7 +115,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer Phone', 'traveler') ?>
+                                           for=""><?php _e('Customer Phone', 'traveler-childtheme') ?>
                                         <span class="require"> (*)</span></label>
                                     <div class="controls">
                                         <?php
@@ -129,7 +129,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer Address line 1', 'traveler') ?></label>
+                                           for=""><?php _e('Customer Address line 1', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $st_address = isset($_POST['st_address']) ? $_POST['st_address'] : get_post_meta($item_id, 'st_address', true);
@@ -142,7 +142,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer Address line 2', 'traveler') ?></label>
+                                           for=""><?php _e('Customer Address line 2', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $st_address2 = isset($_POST['st_address2']) ? $_POST['st_address2'] : get_post_meta($item_id, 'st_address2', true);
@@ -155,7 +155,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Customer City', 'traveler') ?></label>
+                                           for=""><?php _e('Customer City', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $st_city = isset($_POST['st_city']) ? $_POST['st_city'] : get_post_meta($item_id, 'st_city', true);
@@ -168,7 +168,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('State/Province/Region', 'traveler') ?></label>
+                                           for=""><?php _e('State/Province/Region', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $st_province = isset($_POST['st_province']) ? $_POST['st_province'] : get_post_meta($item_id, 'st_province', true);
@@ -181,7 +181,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('ZIP code/Postal code', 'traveler') ?></label>
+                                           for=""><?php _e('ZIP code/Postal code', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $st_zip_code = isset($_POST['st_zip_code']) ? $_POST['st_zip_code'] : get_post_meta($item_id, 'st_zip_code', true);
@@ -194,7 +194,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Country', 'traveler') ?></label>
+                                           for=""><?php _e('Country', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $st_country = isset($_POST['st_country']) ? $_POST['st_country'] : get_post_meta($item_id, 'st_country', true);
@@ -211,7 +211,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 ?>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Tour', 'traveler') ?></label>
+                                           for=""><?php _e('Tour', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $tour_id = intval(get_post_meta($item_id, 'item_id', true));
@@ -221,15 +221,15 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Tour Type', 'traveler') ?></label>
+                                           for=""><?php _e('Tour Type', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $tour_type = get_post_meta($item_id, 'type_tour', true);
                                         $tour_name = '';
                                         if ($tour_type == 'daily_tour') {
-                                            $tour_name = __('Daily Tour', 'traveler');
+                                            $tour_name = __('Daily Tour', 'traveler-childtheme');
                                         } elseif ($tour_type == 'specific_date') {
-                                            $tour_name = __('Specific Date', 'traveler');
+                                            $tour_name = __('Specific Date', 'traveler-childtheme');
                                         }
                                         ?>
                                         <strong><?php echo esc_html($tour_name); ?></strong>
@@ -237,7 +237,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="max_people"><?php _e('Max people', 'traveler') ?></label>
+                                           for="max_people"><?php _e('Max people', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $max_people = (int)get_post_meta($order_item_id, 'max_people', true);
@@ -247,7 +247,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="check_in"><?php _e('Departure date', 'traveler') ?></label>
+                                           for="check_in"><?php _e('Departure date', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $check_in = get_post_meta($item_id, 'check_in', true);
@@ -262,7 +262,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row <?php if ($tour_type == 'daily_tour') echo 'hide'; ?>">
                                     <label class="form-label"
-                                           for="check_out"><?php _e('Return date', 'traveler') ?></label>
+                                           for="check_out"><?php _e('Return date', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $check_out = get_post_meta($item_id, 'check_out', true);
@@ -278,7 +278,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 <!-- since 2.0.0 Add Start Time column -->
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="start_time"><?php _e('Start Time', 'traveler') ?></label>
+                                           for="start_time"><?php _e('Start Time', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $starttime = get_post_meta($item_id, 'starttime', true);
@@ -289,7 +289,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 <?php if ($tour_type == 'daily_tour'): ?>
                                     <div class="form-row">
                                         <label class="form-label"
-                                               for="duration"><?php _e('Duration', 'traveler') ?> </label>
+                                               for="duration"><?php _e('Duration', 'traveler-childtheme') ?> </label>
                                         <div class="controls">
                                             <?php
                                             $duration = get_post_meta($item_id, 'duration', true);
@@ -300,7 +300,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 <?php endif; ?>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="adult_number"><?php _e('No. Adults', 'traveler') ?></label>
+                                           for="adult_number"><?php _e('No. Adults', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $adult_number = (int)get_post_meta($item_id, 'adult_number', true);
@@ -313,7 +313,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="child_number"><?php _e('No. Children', 'traveler') ?></label>
+                                           for="child_number"><?php _e('No. Children', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $child_number = (int)get_post_meta($item_id, 'child_number', true);
@@ -327,7 +327,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="infant_number"><?php _e('No. Infant', 'traveler') ?></label>
+                                           for="infant_number"><?php _e('No. Infant', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $infant_number = (int)get_post_meta($item_id, 'infant_number', true);
@@ -355,7 +355,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
 										$price_ori            = $people_price_package['package_price_fixed'];
 										?>
 										<label class="form-label" for="">
-											<?php echo __( 'Package', 'traveler' ); ?>
+											<?php echo __( 'Package', 'traveler-childtheme' ); ?>
 										</label>
 										<div class="controls">
 											<strong><?php echo esc_html( $package_select ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?></strong>
@@ -367,7 +367,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
 
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Adult Price', 'traveler') ?></label>
+                                           for=""><?php _e('Adult Price', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $adult_price = floatval(get_post_meta($item_id, 'adult_price', true));
@@ -377,7 +377,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Children Price', 'traveler') ?></label>
+                                           for=""><?php _e('Children Price', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $child_price = floatval(get_post_meta($item_id, 'child_price', true));
@@ -387,7 +387,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 </div>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for=""><?php _e('Infant Price', 'traveler') ?></label>
+                                           for=""><?php _e('Infant Price', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $infant_price = floatval(get_post_meta($item_id, 'infant_price', true));
@@ -401,7 +401,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 ]); ?>
                                 <div class="form-row">
                                     <label class="form-label"
-                                           for="extra"><?php _e('Extra', 'traveler') ?></label>
+                                           for="extra"><?php _e('Extra', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php
                                         $extra_price = get_post_meta($order_item_id, 'extra_price', true);
@@ -461,7 +461,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                 <div class="form-row">
                                     <?php if (!empty($hotel_package) and is_array($hotel_package) && count($hotel_package)) { ?>
                                     <label class="form-label"
-                                           for=""><?php _e('Hotel Package', 'traveler') ?></label>
+                                           for=""><?php _e('Hotel Package', 'traveler-childtheme') ?></label>
                                     <div class="controls">
                                         <?php if (is_array($hotel_package) && count($hotel_package)) { ?>
                                             <table class="table"
@@ -481,7 +481,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                             </label>
                                                         </td>
                                                         <td width="50%">
-                                                            <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler'); ?></strong>
+                                                            <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler-childtheme'); ?></strong>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -495,7 +495,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                     <div class="form-row">
                                         <?php if (!empty($activity_package) and is_array($activity_package) && count($activity_package)) { ?>
                                         <label class="form-label"
-                                               for=""><?php _e('Activity Package', 'traveler') ?></label>
+                                               for=""><?php _e('Activity Package', 'traveler-childtheme') ?></label>
                                         <div class="controls">
                                             <?php if (is_array($activity_package) && count($activity_package)) { ?>
                                                 <table class="table"
@@ -515,7 +515,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                                 </label>
                                                             </td>
                                                             <td width="50%">
-                                                                <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler'); ?></strong>
+                                                                <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler-childtheme'); ?></strong>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
@@ -529,7 +529,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                         <div class="form-row">
                                             <?php if (!empty($car_package) and is_array($car_package) && count($car_package)) { ?>
                                             <label class="form-label"
-                                                   for=""><?php _e('Car Package', 'traveler') ?></label>
+                                                   for=""><?php _e('Car Package', 'traveler-childtheme') ?></label>
                                             <div class="controls">
                                                 <?php if (is_array($car_package) && count($car_package)) { ?>
                                                     <table class="table"
@@ -549,7 +549,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                                     </label>
                                                                 </td>
                                                                 <td width="50%">
-                                                                    <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler'); ?></strong>
+                                                                    <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler-childtheme'); ?></strong>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach; ?>
@@ -563,7 +563,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                             <div class="form-row">
                                                 <?php if (!empty($flight_package) and is_array($flight_package) && count($flight_package)) { ?>
                                                 <label class="form-label"
-                                                       for=""><?php _e('Flight Package', 'traveler') ?></label>
+                                                       for=""><?php _e('Flight Package', 'traveler-childtheme') ?></label>
                                                 <div class="controls">
                                                     <?php if (is_array($flight_package) && count($flight_package)) { ?>
                                                         <table class="table"
@@ -583,7 +583,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                                         </label>
                                                                     </td>
                                                                     <td width="50%">
-                                                                        <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler'); ?></strong>
+                                                                        <strong><?php echo TravelHelper::format_money($price_item) . ' x ' . esc_html($number_item) . ' ' . __('Item(s)', 'traveler-childtheme'); ?></strong>
                                                                     </td>
                                                                 </tr>
                                                             <?php endforeach; ?>
@@ -598,7 +598,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                     ?>
                                                     <div class="form-row">
                                                         <label class="form-label"
-                                                               for=""><?php _e('Fee', 'traveler') ?></label>
+                                                               for=""><?php _e('Fee', 'traveler-childtheme') ?></label>
                                                         <div class="controls">
                                                             <strong><?php echo TravelHelper::format_money_from_db($booking_fee_price, $currency); ?></strong>
                                                         </div>
@@ -608,7 +608,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                 <div class="form-row">
                                                     <?php $coupon_code = get_post_meta($item_id, 'coupon_code', true); ?>
                                                     <label class="form-label"
-                                                           for=""><?php echo _e('Coupon code: ', 'traveler'); ?><?php echo esc_html($coupon_code); ?></label>
+                                                           for=""><?php echo _e('Coupon code: ', 'traveler-childtheme'); ?><?php echo esc_html($coupon_code); ?></label>
 
                                                     <div class="controls">
 
@@ -626,7 +626,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="form-label"
-                                                           for=""><?php _e('Pay Amount', 'traveler') ?></label>
+                                                           for=""><?php _e('Pay Amount', 'traveler-childtheme') ?></label>
                                                     <div class="controls">
                                                         <?php
                                                         $data_prices = (get_post_meta($item_id, 'total_price', true));
@@ -636,7 +636,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="form-label"
-                                                           for=""><?php _e('Total', 'traveler') ?></label>
+                                                           for=""><?php _e('Total', 'traveler-childtheme') ?></label>
                                                     <div class="controls">
                                                         <strong><?php echo TravelHelper::format_money_from_db($data_prices, $currency); ?></strong>
                                                     </div>
@@ -647,7 +647,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                     ?>
                                                     <div class="form-row">
                                                         <label class="form-label"
-                                                               for="st_note"><?php _e('Special Requirements', 'traveler') ?></label>
+                                                               for="st_note"><?php _e('Special Requirements', 'traveler-childtheme') ?></label>
                                                         <div class="controls">
                                                             <?php echo esc_html($st_note); ?>
                                                         </div>
@@ -656,7 +656,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                 <div class="form-row">
 
                                                     <label class="form-label"
-                                                           for=""><?php _e('Transaction ID Stripe', 'traveler') ?></label>
+                                                           for=""><?php _e('Transaction ID Stripe', 'traveler-childtheme') ?></label>
 
                                                     <div class="controls">
 
@@ -674,7 +674,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                 <div class="form-row">
 
                                                     <label class="form-label"
-                                                           for="status"><?php _e('Status', 'traveler') ?></label>
+                                                           for="status"><?php _e('Status', 'traveler-childtheme') ?></label>
 
                                                     <div class="controls">
 
@@ -686,15 +686,15 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                             $status = get_post_meta($item_id, 'status', true);
                                                             ?>
 
-                                                            <option value="pending" <?php selected($status, 'pending') ?> ><?php _e('Pending', 'traveler') ?></option>
+                                                            <option value="pending" <?php selected($status, 'pending') ?> ><?php _e('Pending', 'traveler-childtheme') ?></option>
 
-                                                            <option value="incomplete" <?php selected($status, 'incomplete') ?> ><?php _e('Incomplete', 'traveler') ?></option>
+                                                            <option value="incomplete" <?php selected($status, 'incomplete') ?> ><?php _e('Incomplete', 'traveler-childtheme') ?></option>
 
-                                                            <option value="complete" <?php selected($status, 'complete') ?> ><?php _e('Complete', 'traveler') ?></option>
+                                                            <option value="complete" <?php selected($status, 'complete') ?> ><?php _e('Complete', 'traveler-childtheme') ?></option>
 
-                                                            <option value="canceled" <?php selected($status, 'canceled') ?> ><?php _e('Canceled', 'traveler') ?></option>
+                                                            <option value="canceled" <?php selected($status, 'canceled') ?> ><?php _e('Canceled', 'traveler-childtheme') ?></option>
 
-                                                            <option value="cancelling" <?php selected($status, 'cancelling') ?> ><?php _e('Cancelling', 'traveler') ?></option>
+                                                            <option value="cancelling" <?php selected($status, 'cancelling') ?> ><?php _e('Cancelling', 'traveler-childtheme') ?></option>
 
                                                         </select>
 
@@ -705,7 +705,7 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                                     <div class="controls">
                                                         <input type="submit"
                                                                name="submit"
-                                                               value="<?php echo __('Save', 'traveler') ?>"
+                                                               value="<?php echo __('Save', 'traveler-childtheme') ?>"
                                                                class="button button-primary ">
                                                     </div>
                                                 </div>

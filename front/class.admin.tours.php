@@ -15,29 +15,29 @@ if ( ! class_exists( 'STAdminTourNew' ) ) {
 			}
 			$metabox[] = [
 				'id'       => 'tour_metabox_custom',
-				'title'    => __( 'Tour Setting Custom', 'traveler' ),
+				'title'    => __( 'Tour Setting Custom', 'traveler-childtheme' ),
 				'desc'     => '',
 				'pages'    => [ 'st_tours' ],
 				'context'  => 'normal',
 				'priority' => 'high',
 				'fields'   => [
 					[
-						'label' => __( 'Custom Tour Price', 'traveler' ),
+						'label' => __( 'Custom Tour Price', 'traveler-childtheme' ),
 						'id'    => 'Custom_tour_price',
 						'type'  => 'tab',
 					],
 
 					[
-						'label'     => __( 'Services package', 'traveler' ),
+						'label'     => __( 'Services package', 'traveler-childtheme' ),
 						'std'       => 0,
 						'condition' => 'tour_price_by:is(fixed)',
 						'type'      => 'list-item',
 						'id'        => 'package_list',
-						'desc'      => __( 'Attached service package', 'traveler' ),
+						'desc'      => __( 'Attached service package', 'traveler-childtheme' ),
 						'settings'  => [
 							[
 								'id'    => 'package_price_fixed',
-								'label' => __( 'Price', 'traveler' ),
+								'label' => __( 'Price', 'traveler-childtheme' ),
 								'type'  => 'text',
 							],
 						],

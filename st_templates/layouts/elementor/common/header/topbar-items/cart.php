@@ -34,7 +34,7 @@ if($st_is_woocommerce_checkout and function_exists('WC')){
         </div>
         <ul class="woocommerce-mini-cart cart_list product_list_widget  dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-mini-cart">
             <li class="heading">
-                <div class="st-heading-section"><?php echo esc_html__('Your Cart', 'traveler') ?></div>
+                <div class="st-heading-section"><?php echo esc_html__('Your Cart', 'traveler-childtheme') ?></div>
             </li>
             <?php
             do_action( 'woocommerce_before_mini_cart' );
@@ -80,7 +80,7 @@ if($st_is_woocommerce_checkout and function_exists('WC')){
                                                                  href="<?php echo get_the_permalink($post_id) ?>"><?php echo esc_html($post_title); ?></a>
                                     </h4>
                                 <?php endif; ?>
-                                <div class="price-wrapper"><?php echo __('Price', 'traveler') ?>:
+                                <div class="price-wrapper"><?php echo __('Price', 'traveler-childtheme') ?>:
                                     <span class="price"><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key );?></span>
                                 </div>
                             </div>
@@ -105,16 +105,16 @@ if($st_is_woocommerce_checkout and function_exists('WC')){
                     ?>
                     <a href="<?php echo add_query_arg(['action' => 'st-remove-cart', 'security' => wp_create_nonce('st-security')]); ?>"
                        class="btn btn-danger btn-full upper">
-                        <?php echo __('Remove Cart', 'traveler') ?>
+                        <?php echo __('Remove Cart', 'traveler-childtheme') ?>
                     </a>
                     <a href="<?php echo esc_url(get_permalink( wc_get_page_id( 'checkout' ) )) ?>"
-                       class="btn btn-full upper mt10"><?php echo __('Pay Now', 'traveler') ?></a>
+                       class="btn btn-full upper mt10"><?php echo __('Pay Now', 'traveler-childtheme') ?></a>
                 </li>
                 <?php
                 do_action( 'woocommerce_after_mini_cart' );
             else:
                 ?>
-                <li><div class="col-lg-12 cart-text-empty text-warning"><?php echo __('Your cart is empty', 'traveler'); ?></div></li>
+                <li><div class="col-lg-12 cart-text-empty text-warning"><?php echo __('Your cart is empty', 'traveler-childtheme'); ?></div></li>
             <?php
             endif;
             ?>
@@ -145,7 +145,7 @@ if($st_is_woocommerce_checkout and function_exists('WC')){
         </div>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-mini-cart">
             <li class="heading">
-                <div class="st-heading-section"><?php echo esc_html__('Your Cart', 'traveler') ?></div>
+                <div class="st-heading-section"><?php echo esc_html__('Your Cart', 'traveler-childtheme') ?></div>
             </li>
             <?php
             if (STCart::check_cart()):
@@ -200,7 +200,7 @@ if($st_is_woocommerce_checkout and function_exists('WC')){
                                     </div>
                                 <?php endif; ?>
 
-                                <div class="price-wrapper"><?php echo __('Price', 'traveler') ;?>:
+                                <div class="price-wrapper"><?php echo __('Price', 'traveler-childtheme') ;?>:
                                     <span class="price"><?php echo TravelHelper::format_money($price,false); ?></span>
                                 </div>
                             </div>
@@ -237,16 +237,16 @@ if($st_is_woocommerce_checkout and function_exists('WC')){
                 endforeach;
                 ?>
                 <li class="cart-total">
-                    <div class="sub-total"><?php echo __('Subtotal', 'traveler') ?> <span
+                    <div class="sub-total"><?php echo __('Subtotal', 'traveler-childtheme') ?> <span
                             class="price"><?php echo TravelHelper::format_money($cart_total_amount,false); ?></span>
                     </div>
                     <a href="<?php echo esc_url($check_out_url) ?>"
-                       class="btn btn-full upper"><?php _e('Pay Now', 'traveler') ?></a>
+                       class="btn btn-full upper"><?php _e('Pay Now', 'traveler-childtheme') ?></a>
                 </li>
             <?php
             else:
                 ?>
-                <li><div class="col-lg-12 cart-text-empty text-warning"><?php echo __('Your cart is empty', 'traveler'); ?></div></li>
+                <li><div class="col-lg-12 cart-text-empty text-warning"><?php echo __('Your cart is empty', 'traveler-childtheme'); ?></div></li>
             <?php
             endif;
             ?>

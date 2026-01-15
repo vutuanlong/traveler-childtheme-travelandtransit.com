@@ -17,10 +17,10 @@ if ( ! empty( $data_price ) ) {
 			$post_type = get_post_type( $service_id );
 			$obj       = get_post_type_object( $post_type );
 			?>
-			<a data-toggle="tab" href="#tab-booking-detail" aria-expanded="true"> <?php echo sprintf( esc_html__( '%s Details', 'traveler' ), $obj->labels->singular_name ) ?></a>
+			<a data-toggle="tab" href="#tab-booking-detail" aria-expanded="true"> <?php echo sprintf( esc_html__( '%s Details', 'traveler-childtheme' ), $obj->labels->singular_name ) ?></a>
 		</li>
 		<li class="">
-			<a data-toggle="tab" href="#tab-customer-detail" aria-expanded="false"> <?php esc_html_e( 'Customer Details', 'traveler' ) ?></a>
+			<a data-toggle="tab" href="#tab-customer-detail" aria-expanded="false"> <?php esc_html_e( 'Customer Details', 'traveler-childtheme' ) ?></a>
 		</li>
 	</ul>
 	<div class="tab-content" id="myTabContent973">
@@ -29,25 +29,25 @@ if ( ! empty( $data_price ) ) {
 				<div class="row">
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Booking ID', 'traveler' ) ?>:  </strong>
+						<strong><?php esc_html_e( 'Booking ID', 'traveler-childtheme' ) ?>:  </strong>
 						#<?php echo esc_html( $order_id ) ?>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Payment Method: ', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'Payment Method: ', 'traveler-childtheme' ) ?> </strong>
 						<?php echo STPaymentGateways::get_gatewayname( get_post_meta( $order_id, 'payment_method', true ) ); ?>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Order Date', 'traveler' ) ?>:  </strong>
+						<strong><?php esc_html_e( 'Order Date', 'traveler-childtheme' ) ?>:  </strong>
 						<?php echo esc_html( date_i18n( $date_format, strtotime( $order_data['created'] ) ) ) ?>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Booking Status', 'traveler' ) ?>:  </strong>
+						<strong><?php esc_html_e( 'Booking Status', 'traveler-childtheme' ) ?>:  </strong>
 						<?php
 						$data_status = STUser_f::_get_all_order_statuses();
 						$status      = $order_data['status'];
@@ -55,7 +55,7 @@ if ( ! empty( $data_price ) ) {
 							$status_string = $data_status[ $status ];
 							$status_string = $data_status[ get_post_meta( $order_id, 'status', true ) ];
 							if ( isset( $order_data['cancel_refund_status'] ) && $order_data['cancel_refund_status'] == 'pending' ) {
-								$status_string = __( 'Cancelling', 'traveler' );
+								$status_string = __( 'Cancelling', 'traveler-childtheme' );
 							}
 						}
 						?>
@@ -64,23 +64,23 @@ if ( ! empty( $data_price ) ) {
 				</div>
 				<div class="col-md-12">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Tour Name', 'traveler' ) ?>:  </strong>
+						<strong><?php esc_html_e( 'Tour Name', 'traveler-childtheme' ) ?>:  </strong>
 						<a href="<?php echo get_the_permalink( $service_id ) ?>"><?php echo get_the_title( $service_id ) ?></a>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Tour Type', 'traveler' ) ?>:  </strong>
+						<strong><?php esc_html_e( 'Tour Type', 'traveler-childtheme' ) ?>:  </strong>
 						<?php
 						$tour_name = '';
 						if ( $price_type == 'fixed_depart' ) {
-							$tour_name = __( 'Fixed Departure', 'traveler' );
+							$tour_name = __( 'Fixed Departure', 'traveler-childtheme' );
 						} else {
 							$tour_type = get_post_meta( $order_id, 'type_tour', true );
 							if ( $tour_type == 'daily_tour' ) {
-								$tour_name = __( 'Daily Tour', 'traveler' );
+								$tour_name = __( 'Daily Tour', 'traveler-childtheme' );
 							} elseif ( $tour_type == 'specific_date' ) {
-								$tour_name = __( 'Specific Date', 'traveler' );
+								$tour_name = __( 'Specific Date', 'traveler-childtheme' );
 							}
 						}
 						echo esc_html( $tour_name );
@@ -98,7 +98,7 @@ if ( ! empty( $data_price ) ) {
 						$price_ori            = $people_price_package['package_price_fixed'];
 						?>
 						<div class="item_booking_detail">
-							<strong><?php esc_html_e( 'Package: ', 'traveler' ) ?></strong>
+							<strong><?php esc_html_e( 'Package: ', 'traveler-childtheme' ) ?></strong>
 							<?php echo esc_html( $package_name ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?>
 						</div>
 						<?php
@@ -108,14 +108,14 @@ if ( ! empty( $data_price ) ) {
 
 				<div class="col-md-12">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Address: ', 'traveler' ) ?></strong>
+						<strong><?php esc_html_e( 'Address: ', 'traveler-childtheme' ) ?></strong>
 						<?php echo get_post_meta( $service_id, 'address', true ); ?>
 					</div>
 				</div>
 					<?php if ( $price_type != 'fixed_depart' ) { ?>
 						<div class="col-md-6">
 							<div class="item_booking_detail">
-								<strong><?php esc_html_e( 'Departure date:', 'traveler' ) ?> </strong>
+								<strong><?php esc_html_e( 'Departure date:', 'traveler-childtheme' ) ?> </strong>
 								<?php
 								$check_in = date( $date_format, $order_data['check_in_timestamp'] );
 								echo esc_html( $check_in ) . ( $order_data['starttime'] != '' ? ' - ' . esc_html( $order_data['starttime'] ) : '' );
@@ -129,7 +129,7 @@ if ( ! empty( $data_price ) ) {
 						?>
 						">
 							<div class="item_booking_detail">
-								<strong><?php esc_html_e( 'Return date:', 'traveler' ) ?> </strong>
+								<strong><?php esc_html_e( 'Return date:', 'traveler-childtheme' ) ?> </strong>
 								<?php
 								$check_out = date( $date_format, $order_data['check_out_timestamp'] );
 								echo esc_html( $check_out );
@@ -143,7 +143,7 @@ if ( ! empty( $data_price ) ) {
 						?>
 						">
 							<div class="item_booking_detail">
-								<strong><?php esc_html_e( 'Duration:', 'traveler' ) ?> </strong>
+								<strong><?php esc_html_e( 'Duration:', 'traveler-childtheme' ) ?> </strong>
 								<?php
 								echo get_post_meta( $order_id, 'duration', true );
 								?>
@@ -152,7 +152,7 @@ if ( ! empty( $data_price ) ) {
 					<?php } else { ?>
 						<div class="col-md-6">
 							<div class="item_booking_detail">
-								<strong><?php esc_html_e( 'Start date:', 'traveler' ) ?> </strong>
+								<strong><?php esc_html_e( 'Start date:', 'traveler-childtheme' ) ?> </strong>
 								<?php
 								$day_check_in = TourHelper::getDayFromNumber( date( 'N', $order_data['check_in_timestamp'] ) );
 								$check_in     = date( $date_format, $order_data['check_in_timestamp'] );
@@ -162,7 +162,7 @@ if ( ! empty( $data_price ) ) {
 						</div>
 						<div class="col-md-6">
 							<div class="item_booking_detail">
-								<strong><?php esc_html_e( 'End date:', 'traveler' ) ?> </strong>
+								<strong><?php esc_html_e( 'End date:', 'traveler-childtheme' ) ?> </strong>
 								<?php
 								$day_check_out = TourHelper::getDayFromNumber( date( 'N', $order_data['check_out_timestamp'] ) );
 								$check_out     = date( $date_format, $order_data['check_out_timestamp'] );
@@ -181,14 +181,14 @@ if ( ! empty( $data_price ) ) {
 				<div class="line col-md-12"></div>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'No. Adults :', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'No. Adults :', 'traveler-childtheme' ) ?> </strong>
 						<?php echo get_post_meta( $order_id, 'adult_number', true ); ?>
 					</div>
 				</div>
 				<?php if ( $price_type == 'person' ) : ?>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Adult Price :', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'Adult Price :', 'traveler-childtheme' ) ?> </strong>
 						<?php $adult_price = get_post_meta( $order_id, 'adult_price', true ); ?>
 						<?php echo TravelHelper::format_money( $adult_price ); ?>
 					</div>
@@ -196,14 +196,14 @@ if ( ! empty( $data_price ) ) {
 					<?php endif; ?>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'No. Children :', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'No. Children :', 'traveler-childtheme' ) ?> </strong>
 						<?php echo get_post_meta( $order_id, 'child_number', true ); ?>
 					</div>
 				</div>
 					<?php if ( $price_type == 'person' ) : ?>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Children Price :', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'Children Price :', 'traveler-childtheme' ) ?> </strong>
 						<?php $child_price = get_post_meta( $order_id, 'child_price', true ); ?>
 						<?php echo TravelHelper::format_money( $child_price ); ?>
 					</div>
@@ -211,14 +211,14 @@ if ( ! empty( $data_price ) ) {
 					<?php endif; ?>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'No. Infant :', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'No. Infant :', 'traveler-childtheme' ) ?> </strong>
 						<?php echo get_post_meta( $order_id, 'infant_number', true ); ?>
 					</div>
 				</div>
 					<?php if ( $price_type == 'person' ) : ?>
 				<div class="col-md-6">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Infant Price :', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'Infant Price :', 'traveler-childtheme' ) ?> </strong>
 						<?php $infant_price = get_post_meta( $order_id, 'infant_price', true ); ?>
 						<?php echo TravelHelper::format_money( $infant_price ); ?>
 					</div>
@@ -227,7 +227,7 @@ if ( ! empty( $data_price ) ) {
 					<?php if ( $price_type == 'fixed' ) : ?>
 						<div class="col-md-6">
 							<div class="item_booking_detail">
-								<strong><?php esc_html_e( 'Base Price :', 'traveler' ) ?> </strong>
+								<strong><?php esc_html_e( 'Base Price :', 'traveler-childtheme' ) ?> </strong>
 								<?php echo ! empty( $data_price['origin_price'] ) ? TravelHelper::format_money( $data_price['origin_price'] ) : '0'; ?>
 							</div>
 						</div>
@@ -255,18 +255,18 @@ if ( ! empty( $data_price ) ) {
 				?>
 				">
 					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Extra Price:', 'traveler' ) ?> </strong>
+						<strong><?php esc_html_e( 'Extra Price:', 'traveler-childtheme' ) ?> </strong>
 						<?php echo TravelHelper::format_money( $extra_price ); ?>
 						<?php if ( is_array( $data_extra ) && count( $extras ) ) { ?>
 							<table class="table mt10 mb10" style="table-layout: fixed;" width="200">
 								<tr>
 									<td>
 										<label>
-											<strong><?php esc_html_e( 'Name Extra', 'traveler' ) ?></strong>
+											<strong><?php esc_html_e( 'Name Extra', 'traveler-childtheme' ) ?></strong>
 										</label>
 									</td>
 									<td width="40%">
-										<strong><?php esc_html_e( 'Price', 'traveler' ) ?></strong>
+										<strong><?php esc_html_e( 'Price', 'traveler-childtheme' ) ?></strong>
 									</td>
 								</tr>
 								<?php
@@ -304,18 +304,18 @@ if ( ! empty( $data_price ) ) {
 					?>
 					">
 						<div class="item_booking_detail">
-							<strong><?php esc_html_e( 'Hotel Package:', 'traveler' ) ?> </strong>
+							<strong><?php esc_html_e( 'Hotel Package:', 'traveler-childtheme' ) ?> </strong>
 							<?php echo TravelHelper::format_money( $hotel_package_price ); ?>
 							<?php if ( is_array( $hotel_packages ) && count( $hotel_packages ) ) { ?>
 								<table class="table mt10 mb10" style="table-layout: fixed;" width="200">
 									<tr>
 										<td>
 											<label>
-												<strong><?php esc_html_e( 'Hotel Name', 'traveler' ) ?></strong>
+												<strong><?php esc_html_e( 'Hotel Name', 'traveler-childtheme' ) ?></strong>
 											</label>
 										</td>
 										<td width="40%">
-											<strong><?php esc_html_e( 'Price', 'traveler' ) ?></strong>
+											<strong><?php esc_html_e( 'Price', 'traveler-childtheme' ) ?></strong>
 										</td>
 									</tr>
 									<?php
@@ -352,18 +352,18 @@ if ( ! empty( $data_price ) ) {
 					?>
 					">
 						<div class="item_booking_detail">
-							<strong><?php esc_html_e( 'Activity Package:', 'traveler' ) ?> </strong>
+							<strong><?php esc_html_e( 'Activity Package:', 'traveler-childtheme' ) ?> </strong>
 							<?php echo TravelHelper::format_money( $activity_package_price ); ?>
 							<?php if ( is_array( $activity_packages ) && count( $activity_packages ) ) { ?>
 								<table class="table mt10 mb10" style="table-layout: fixed;" width="200">
 									<tr>
 										<td>
 											<label>
-												<strong><?php esc_html_e( 'Activity Name', 'traveler' ) ?></strong>
+												<strong><?php esc_html_e( 'Activity Name', 'traveler-childtheme' ) ?></strong>
 											</label>
 										</td>
 										<td width="40%">
-											<strong><?php esc_html_e( 'Price', 'traveler' ) ?></strong>
+											<strong><?php esc_html_e( 'Price', 'traveler-childtheme' ) ?></strong>
 										</td>
 									</tr>
 									<?php
@@ -399,18 +399,18 @@ if ( ! empty( $data_price ) ) {
 					?>
 					">
 						<div class="item_booking_detail">
-							<strong><?php esc_html_e( 'Car Package:', 'traveler' ) ?> </strong>
+							<strong><?php esc_html_e( 'Car Package:', 'traveler-childtheme' ) ?> </strong>
 							<?php echo TravelHelper::format_money( $car_package_price ); ?>
 							<?php if ( is_array( $car_packages ) && count( $car_packages ) ) { ?>
 								<table class="table mt10 mb10" style="table-layout: fixed;" width="200">
 									<tr>
 										<td>
 											<label>
-												<strong><?php esc_html_e( 'Car Name', 'traveler' ) ?></strong>
+												<strong><?php esc_html_e( 'Car Name', 'traveler-childtheme' ) ?></strong>
 											</label>
 										</td>
 										<td width="40%">
-											<strong><?php esc_html_e( 'Price', 'traveler' ) ?></strong>
+											<strong><?php esc_html_e( 'Price', 'traveler-childtheme' ) ?></strong>
 										</td>
 									</tr>
 									<?php
@@ -446,18 +446,18 @@ if ( ! empty( $data_price ) ) {
 					?>
 					">
 						<div class="item_booking_detail">
-							<strong><?php esc_html_e( 'Flight Package:', 'traveler' ) ?> </strong>
+							<strong><?php esc_html_e( 'Flight Package:', 'traveler-childtheme' ) ?> </strong>
 							<?php echo TravelHelper::format_money( $flight_package_price ); ?>
 							<?php if ( is_array( $hotel_packages ) && count( $hotel_packages ) ) { ?>
 								<table class="table mt10 mb10" style="table-layout: fixed;" width="200">
 									<tr>
 										<td>
 											<label>
-												<strong><?php esc_html_e( 'Origin/Destination', 'traveler' ) ?></strong>
+												<strong><?php esc_html_e( 'Origin/Destination', 'traveler-childtheme' ) ?></strong>
 											</label>
 										</td>
 										<td width="40%">
-											<strong><?php esc_html_e( 'Price', 'traveler' ) ?></strong>
+											<strong><?php esc_html_e( 'Price', 'traveler-childtheme' ) ?></strong>
 										</td>
 									</tr>
 									<?php
@@ -475,8 +475,8 @@ if ( ! empty( $data_price ) ) {
 												<label>
 													<?php
 														echo esc_html( $name_flight_package ) . '<br />';
-														echo __( 'Departure time', 'traveler' ) . ': ' . esc_html( $val->flight_departure_time ) . '<br />';
-														echo __( 'Duration', 'traveler' ) . ': ' . esc_html( $val->flight_duration );
+														echo __( 'Departure time', 'traveler-childtheme' ) . ': ' . esc_html( $val->flight_departure_time ) . '<br />';
+														echo __( 'Duration', 'traveler-childtheme' ) . ': ' . esc_html( $val->flight_duration );
 													?>
 												</label>
 											</td>
@@ -517,5 +517,5 @@ if ( ! empty( $data_price ) ) {
 </div>
 <div class="modal-footer">
 	<?php do_action( 'st_after_body_order_information_table', $order_id ); ?>
-	<button data-dismiss="modal" class="btn btn-default" type="button"><?php esc_html_e( 'Close', 'traveler' ) ?></button>
+	<button data-dismiss="modal" class="btn btn-default" type="button"><?php esc_html_e( 'Close', 'traveler-childtheme' ) ?></button>
 </div>

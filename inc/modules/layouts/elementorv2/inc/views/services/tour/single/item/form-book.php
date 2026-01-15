@@ -8,10 +8,10 @@
 					</div>
 				<?php } ?>
 				<span class="st-unit align-self-end">
-					<?php echo __( 'From:', 'traveler' ); ?>
+					<?php echo __( 'From:', 'traveler-childtheme' ); ?>
 				</span>
 				<?php
-				echo wp_kses( sprintf( __( ' <span class="price d-flex align-content-end flex-column">%s</span>', 'traveler' ), STTour::get_price_html( get_the_ID() ) ), [ 'span' => [ 'class' => [] ] ] );
+				echo wp_kses( sprintf( __( ' <span class="price d-flex align-content-end flex-column">%s</span>', 'traveler-childtheme' ), STTour::get_price_html( get_the_ID() ) ), [ 'span' => [ 'class' => [] ] ] );
 				?>
 			</div>
 			<?php if ( comments_open() && st()->get_option( 'activity_tour_review' ) == 'on' ) { ?>
@@ -24,7 +24,7 @@
 									<?php echo esc_html( $review_rate ); ?>
 								</span>
 								<span class="summary">
-									(<?php comments_number( esc_html__( 'No Review', 'traveler' ), esc_html__( '1 Review', 'traveler' ), get_comments_number() . ' ' . esc_html__( 'Reviews', 'traveler' ) ); ?>)
+									(<?php comments_number( esc_html__( 'No Review', 'traveler-childtheme' ), esc_html__( '1 Review', 'traveler-childtheme' ), get_comments_number() . ' ' . esc_html__( 'Reviews', 'traveler-childtheme' ) ); ?>)
 								</span>
 							</div>
 						</div>
@@ -42,12 +42,12 @@
 					role="tablist">
 					<li><a class="active text-center" id="nav-book-tab" data-bs-toggle="tab" data-bs-target="#nav-book"
 							role="tab" aria-controls="nav-home"
-							aria-selected="true"><?php echo esc_html__( 'Book', 'traveler' ) ?></a>
+							aria-selected="true"><?php echo esc_html__( 'Book', 'traveler-childtheme' ) ?></a>
 					</li>
 					<li><a class="text-center" id="nav-inquirement-tab" data-bs-toggle="tab"
 							data-bs-target="#nav-inquirement"
 							role="tab" aria-controls="nav-profile"
-							aria-selected="false"><?php echo esc_html__( 'Inquiry', 'traveler' ) ?></a>
+							aria-selected="false"><?php echo esc_html__( 'Inquiry', 'traveler-childtheme' ) ?></a>
 					</li>
 				</ul>
 			</nav>
@@ -77,7 +77,7 @@
 			<form id="form-booking-inpage" method="post" action="#booking-request" class="tour-booking-form">
 				<input type="hidden" name="action" value="tours_add_to_cart">
 				<input type="hidden" name="item_id" value="<?php echo get_the_ID(); ?>">
-				<input style="display:none;" type="submit" class="btn btn-default btn-send-message" data-id="<?php echo get_the_ID(); ?>" name="st_send_message" value="<?php echo __( 'Send message', 'traveler' ); ?>">
+				<input style="display:none;" type="submit" class="btn btn-default btn-send-message" data-id="<?php echo get_the_ID(); ?>" name="st_send_message" value="<?php echo __( 'Send message', 'traveler-childtheme' ); ?>">
 			</form>
 			<?php echo st()->load_template( 'email/email_single_service' ); ?>
 		</div>

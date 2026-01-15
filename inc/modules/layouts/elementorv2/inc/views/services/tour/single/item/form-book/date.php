@@ -24,7 +24,7 @@ $current_calendar_reverb = date( 'm/d/Y', strtotime( $current_calendar ) );
 	?>
 	<div class="1 date-wrapper d-flex  justify-content-between align-items-center">
 		<div class="check-in-wrapper">
-			<label><?php echo __( 'Date', 'traveler' ); ?></label>
+			<label><?php echo __( 'Date', 'traveler-childtheme' ); ?></label>
 			<div class="render check-in-render"><?php echo esc_html( $start ); ?></div>
 		</div>
 		<i class="stt-icon-arrow-down"></i>
@@ -69,18 +69,18 @@ $list_time        = AvailabilityHelper::_get_starttime_tour_frontend_by_date( ge
 			data-posttype="st_tours"/>
 	<div class="starttime_box"
 		id="starttime_box">
-		<label><?php echo __( 'Start time', 'traveler' ); ?></label>
+		<label><?php echo __( 'Start time', 'traveler-childtheme' ); ?></label>
 		<select class="form-control st_tour_starttime"
 				name="starttime_tour"
 				id="starttime_tour">
 			<?php
 			if ( ! empty( $list_time['data'] ) && ! empty( $list_time['data'][0] ) ) {
-				$name = count( $list_time['data'] ) > 1 ? __( 'vacancies', 'traveler' ) : __( 'a vacancy', 'traveler' );
+				$name = count( $list_time['data'] ) > 1 ? __( 'vacancies', 'traveler-childtheme' ) : __( 'a vacancy', 'traveler-childtheme' );
 				foreach ( $list_time['data'] as $key => $time ) {
 					if ( intval( $list_time['check'][ $key ] ) > 0 ) {
 						$num_vacancies = intval( $list_time['check'][ $key ] );
 					} else {
-						$num_vacancies = esc_html__( 'Unlimited', 'traveler' );
+						$num_vacancies = esc_html__( 'Unlimited', 'traveler-childtheme' );
 					}
 					?>
 					<option value="<?php echo esc_attr( $time ); ?>"><?php echo esc_attr( $time ); ?>
@@ -109,7 +109,7 @@ if ( $list_package && $tour_price_by == 'fixed' && isset( $list_package[0] ) && 
 	<div class="form-group form-more-extra-package_new st-form-package_new">
 		<div class="box_select">
 			<div class="st_combobox-list-display">
-				<span><?php echo $package_select ? $package_select : esc_html__( 'Select a vehicle', 'traveler' ) ?></span>
+				<span><?php echo $package_select ? $package_select : esc_html__( 'Select a vehicle', 'traveler-childtheme' ) ?></span>
 			</div>
 			<input type="hidden" name="package_select" value="<?php echo trim( $package_select ); ?>">
 			<ul>

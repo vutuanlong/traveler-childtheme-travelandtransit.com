@@ -26,7 +26,7 @@ if ( ! function_exists( 'st_email_booking_custom_package' ) ) {
 				return '<table style="margin-left: -3px;">
 						<tr>
 							<td style="padding-top: 10px;">
-							<strong>' . __( 'Package', 'traveler' ) . ': </strong>
+							<strong>' . __( 'Package', 'traveler-childtheme' ) . ': </strong>
 						</td>
                         <tr>
                             <td style="padding-top: 10px;">

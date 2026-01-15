@@ -11,10 +11,10 @@ if ( $list_package && isset( $list_package[0] ) && $list_package[0]['title'] ) {
 					<thead>
 						<tr>
 							<th class="center title_td">
-								<span><strong><?php echo __( 'Name Package', 'traveler' ); ?></strong></span>
+								<span><strong><?php echo __( 'Name Package', 'traveler-childtheme' ); ?></strong></span>
 							</th>
 							<th class="center title_td">
-								<span><strong><?php echo __( 'Price', 'traveler' ); ?></strong></span>
+								<span><strong><?php echo __( 'Price', 'traveler-childtheme' ); ?></strong></span>
 							</th>
 						</tr>
 					</thead>
@@ -51,25 +51,25 @@ if ( $list_package && isset( $list_package[0] ) && $list_package[0]['title'] ) {
 			$get_posttype = get_post_type( get_the_ID() );
 			switch ( $get_posttype ) {
 				case 'st_hotel':
-					echo __( 'About this hotel', 'traveler' );
+					echo __( 'About this hotel', 'traveler-childtheme' );
 					break;
 				case 'st_tours':
-					echo __( 'About this tour', 'traveler' );
+					echo __( 'About this tour', 'traveler-childtheme' );
 					break;
 				case 'st_cars':
-					echo __( 'About this car', 'traveler' );
+					echo __( 'About this car', 'traveler-childtheme' );
 					break;
 				case 'st_rental':
-					echo __( 'About this rental', 'traveler' );
+					echo __( 'About this rental', 'traveler-childtheme' );
 					break;
 				case 'st_activity':
-					echo __( 'About this activity', 'traveler' );
+					echo __( 'About this activity', 'traveler-childtheme' );
 					break;
 				case 'hotel_room':
-					echo __( 'About this room', 'traveler' );
+					echo __( 'About this room', 'traveler-childtheme' );
 					break;
 				default:
-					echo __( 'About this hotel', 'traveler' );
+					echo __( 'About this hotel', 'traveler-childtheme' );
 					break;
 			}
 			?>

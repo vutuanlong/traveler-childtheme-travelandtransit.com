@@ -58,14 +58,14 @@ if ( isset( $item_id ) and $item_id ) :
 		<?php if ( $tour_price_by != 'fixed_depart' ) { ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Tour type', 'traveler' ); ?>
+					<?php echo __( 'Tour type', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
 					if ( $type_tour == 'daily_tour' ) {
-						echo __( 'Daily Tour', 'traveler' );
+						echo __( 'Daily Tour', 'traveler-childtheme' );
 					} elseif ( $type_tour == 'specific_date' ) {
-						echo __( 'Special Date', 'traveler' );
+						echo __( 'Special Date', 'traveler-childtheme' );
 					}
 					?>
 				</span>
@@ -73,7 +73,7 @@ if ( isset( $item_id ) and $item_id ) :
 			<?php if ( $type_tour == 'daily_tour' ) : ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Departure date', 'traveler' ); ?>
+					<?php echo __( 'Departure date', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php echo date_i18n( TravelHelper::getDateFormat(), strtotime( $check_in ) ); ?>
@@ -87,13 +87,13 @@ if ( isset( $item_id ) and $item_id ) :
 							'date'  => $date,
 						];
 						?>
-					<a class="st-link" style="font-size: 12px;" href="<?php echo add_query_arg( $args, get_the_permalink( $item_id ) ); ?>"><?php echo __( 'Edit', 'traveler' ); ?></a>
+					<a class="st-link" style="font-size: 12px;" href="<?php echo add_query_arg( $args, get_the_permalink( $item_id ) ); ?>"><?php echo __( 'Edit', 'traveler-childtheme' ); ?></a>
 				</span>
 			</li>
 			<?php else : ?>
 				<li>
 				<span class="label">
-					<?php echo __( 'Departure date', 'traveler' ); ?>
+					<?php echo __( 'Departure date', 'traveler-childtheme' ); ?>
 				</span>
 					<span class="value">
 						<?php
@@ -114,7 +114,7 @@ if ( isset( $item_id ) and $item_id ) :
 							'date'  => $date,
 						];
 						?>
-						<a class="st-link" style="font-size: 12px;" href="<?php echo add_query_arg( $args, get_the_permalink( $item_id ) ); ?>"><?php echo __( 'Edit', 'traveler' ); ?></a>
+						<a class="st-link" style="font-size: 12px;" href="<?php echo add_query_arg( $args, get_the_permalink( $item_id ) ); ?>"><?php echo __( 'Edit', 'traveler-childtheme' ); ?></a>
 					</span>
 				</li>
 			<?php endif; ?>
@@ -124,7 +124,7 @@ if ( isset( $item_id ) and $item_id ) :
 				?>
 				<li>
 				<span class="label">
-					<?php echo __( 'Start time', 'traveler' ); ?>
+					<?php echo __( 'Start time', 'traveler-childtheme' ); ?>
 				</span>
 					<span class="value">
 						<?php echo esc_html( $item['data']['starttime'] ); ?>
@@ -136,7 +136,7 @@ if ( isset( $item_id ) and $item_id ) :
 			<?php if ( $duration ) : ?>
 				<li>
 					<span class="label">
-						<?php echo __( 'Duration', 'traveler' ); ?>
+						<?php echo __( 'Duration', 'traveler-childtheme' ); ?>
 					</span>
 					<span class="value">
 						<?php echo STTour::get_duration_unit( $item_id ); ?>
@@ -144,10 +144,10 @@ if ( isset( $item_id ) and $item_id ) :
 				</li>
 			<?php endif; ?>
 		<?php } else { ?>
-			<li><b><?php echo __( 'Fixed Departure', 'traveler' ); ?></b></li>
+			<li><b><?php echo __( 'Fixed Departure', 'traveler-childtheme' ); ?></b></li>
 			<li>
 				<span class="label">
-					<?php echo __( 'Start', 'traveler' ); ?>
+					<?php echo __( 'Start', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
@@ -157,7 +157,7 @@ if ( isset( $item_id ) and $item_id ) :
 			</li>
 			<li>
 				<span class="label">
-					<?php echo __( 'End', 'traveler' ); ?>
+					<?php echo __( 'End', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
@@ -174,7 +174,7 @@ if ( isset( $item_id ) and $item_id ) :
 			$price_ori            = $people_price_package['package_price_fixed'];
 			?>
 			<li>
-				<span class="label"><?php echo __( 'Package', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Package', 'traveler-childtheme' ); ?></span>
 				<span class="value">
 					<?php echo esc_html( $package_name ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?>
 				</span>
@@ -188,13 +188,13 @@ if ( isset( $item_id ) and $item_id ) :
 		<li class="ad-info">
 			<ul>
 				<?php if ( $adult_number ) { ?>
-				<li><span class="label"><?php echo __( 'Number of Adult', 'traveler' ); ?></span><span class="value"><?php echo esc_attr( $adult_number ); ?></span></li>
+				<li><span class="label"><?php echo __( 'Number of Adult', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $adult_number ); ?></span></li>
 				<?php } ?>
 				<?php if ( $child_number ) { ?>
-					<li><span class="label"><?php echo __( 'Number of Children', 'traveler' ); ?></span><span class="value"><?php echo esc_attr( $child_number ); ?></span></li>
+					<li><span class="label"><?php echo __( 'Number of Children', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $child_number ); ?></span></li>
 				<?php } ?>
 				<?php if ( $infant_number ) { ?>
-					<li><span class="label"><?php echo __( 'Number of Infant', 'traveler' ); ?></span><span class="value"><?php echo esc_attr( $infant_number ); ?></span></li>
+					<li><span class="label"><?php echo __( 'Number of Infant', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $infant_number ); ?></span></li>
 				<?php } ?>
 			</ul>
 		</li>
@@ -213,7 +213,7 @@ if ( isset( $item_id ) and $item_id ) :
 		if ( $check_extra ) {
 			?>
 			<li>
-				<span class="label"><?php echo __( 'Extra', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Extra', 'traveler-childtheme' ); ?></span>
 			</li>
 			<li class="extra-value">
 					<?php
@@ -229,7 +229,7 @@ if ( isset( $item_id ) and $item_id ) :
 							}
 							?>
 								<span class="pull-right">
-							<?php echo esc_html( $extras['title'][ $name ] ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_attr( $number_item ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+							<?php echo esc_html( $extras['title'][ $name ] ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_attr( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 								</span> <br/>
 							<?php
 							endif;
@@ -246,17 +246,17 @@ if ( isset( $item_id ) and $item_id ) :
 				switch ( $deposit['type'] ) {
 					case 'percent':
 						$deposite_amount = $deposit['amount'] . ' %';
-						$deposite_type   = __( 'percent', 'traveler' );
+						$deposite_type   = __( 'percent', 'traveler-childtheme' );
 						break;
 					case 'amount':
 						$deposite_amount = TravelHelper::format_money( $deposit['amount'] );
-						$deposite_type   = __( 'amount', 'traveler' );
+						$deposite_type   = __( 'amount', 'traveler-childtheme' );
 						break;
 				}
 				?>
 				<li>
 					<span class="label">
-						<?php echo esc_html( __( 'Deposit', 'traveler' ) ) ?>
+						<?php echo esc_html( __( 'Deposit', 'traveler-childtheme' ) ) ?>
 						<?php echo ' ' . esc_html( $deposite_type ) ?>
 					</span>
 					<span class="value pull-right">
@@ -273,14 +273,14 @@ if ( isset( $item_id ) and $item_id ) :
 		<!-- Tour Package -->
 		<?php if ( is_array( $hotel_package ) && count( $hotel_package ) ) : ?>
 			<li class="package-value">
-				<p class="booking-item-payment-price-title"><?php _e( 'Selected Hotel Package', 'traveler' ) ?></p>
+				<p class="booking-item-payment-price-title"><?php _e( 'Selected Hotel Package', 'traveler-childtheme' ) ?></p>
 				<p class="booking-item-payment-price-amount">
 					<?php
 					foreach ( $hotel_package as $k_hp => $v_hp ) :
 						if ( ! empty( $v_hp->qty ) && intval( $v_hp->qty ) > 0 ) {
 							?>
 							<span class="pull-right">
-								<?php echo esc_html( $v_hp->hotel_name ) . ' (' . TravelHelper::format_money( $v_hp->hotel_price ) . ') x ' . esc_attr( $v_hp->qty ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+								<?php echo esc_html( $v_hp->hotel_name ) . ' (' . TravelHelper::format_money( $v_hp->hotel_price ) . ') x ' . esc_attr( $v_hp->qty ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 							</span> <br />
 						<?php } ?>
 					<?php endforeach; ?>
@@ -289,14 +289,14 @@ if ( isset( $item_id ) and $item_id ) :
 		<?php endif; ?>
 		<?php if ( is_array( $activity_package ) && count( $activity_package ) ) : ?>
 			<li class="package-value">
-				<p class="booking-item-payment-price-title"><?php _e( 'Selected Activity Package', 'traveler' ) ?></p>
+				<p class="booking-item-payment-price-title"><?php _e( 'Selected Activity Package', 'traveler-childtheme' ) ?></p>
 				<p class="booking-item-payment-price-amount">
 					<?php
 					foreach ( $activity_package as $k_hp => $v_hp ) :
 						if ( ! empty( $v_hp->qty ) && intval( $v_hp->qty ) > 0 ) {
 							?>
 							<span class="pull-right">
-							<?php echo esc_html( $v_hp->activity_name ) . ' (' . TravelHelper::format_money( $v_hp->activity_price ) . ') x ' . esc_attr( $v_hp->qty ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+							<?php echo esc_html( $v_hp->activity_name ) . ' (' . TravelHelper::format_money( $v_hp->activity_price ) . ') x ' . esc_attr( $v_hp->qty ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 							</span> <br />
 						<?php } ?>
 					<?php endforeach; ?>
@@ -305,14 +305,14 @@ if ( isset( $item_id ) and $item_id ) :
 		<?php endif; ?>
 		<?php if ( is_array( $car_package ) && count( $car_package ) ) : ?>
 			<li class="package-value">
-				<p class="booking-item-payment-price-title"><?php _e( 'Selected Car Package', 'traveler' ) ?></p>
+				<p class="booking-item-payment-price-title"><?php _e( 'Selected Car Package', 'traveler-childtheme' ) ?></p>
 				<p class="booking-item-payment-price-amount">
 					<?php
 					foreach ( $car_package as $k_hp => $v_hp ) :
 						if ( ! empty( $v_hp->qty ) && intval( $v_hp->qty ) > 0 ) {
 							?>
 							<span class="pull-right">
-								<?php echo esc_html( $v_hp->car_name ) . ' (' . TravelHelper::format_money( $v_hp->car_price ) . ') x ' . esc_html( $v_hp->car_quantity ) . ' ' . __( 'Item(s)', 'traveler' ); ?>
+								<?php echo esc_html( $v_hp->car_name ) . ' (' . TravelHelper::format_money( $v_hp->car_price ) . ') x ' . esc_html( $v_hp->car_quantity ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
 							</span> <br />
 						<?php } ?>
 					<?php endforeach; ?>
@@ -321,7 +321,7 @@ if ( isset( $item_id ) and $item_id ) :
 		<?php endif; ?>
 		<?php if ( is_array( $flight_package ) && count( $flight_package ) ) : ?>
 			<li>
-				<p class="booking-item-payment-price-title"><?php _e( 'Selected Flight Package', 'traveler' ) ?></p>
+				<p class="booking-item-payment-price-title"><?php _e( 'Selected Flight Package', 'traveler-childtheme' ) ?></p>
 				<p class="booking-item-payment-price-amount">
 					<?php
 					foreach ( $flight_package as $k_fp => $v_fp ) :
@@ -349,7 +349,7 @@ if ( isset( $item_id ) and $item_id ) :
 	</ul>
 </div>
 <div class="coupon-section">
-	<h5><?php echo __( 'Coupon Code', 'traveler' ); ?></h5>
+	<h5><?php echo __( 'Coupon Code', 'traveler-childtheme' ); ?></h5>
 
 	<form method="post" action="<?php the_permalink() ?>">
 		<?php if ( isset( STCart::$coupon_error['status'] ) ) : ?>
@@ -367,10 +367,10 @@ if ( isset( $item_id ) and $item_id ) :
 			<input type="hidden" name="st_action" value="apply_coupon">
 			<?php if ( st()->get_option( 'use_woocommerce_for_booking', 'off' ) == 'off' && st()->get_option( 'booking_modal', 'off' ) == 'on' ) { ?>
 				<input type="hidden" name="action" value="ajax_apply_coupon">
-				<button type="submit" class="btn btn-primary add-coupon-ajax wp-block-search__button"><?php echo __( 'APPLY', 'traveler' ); ?></button>
+				<button type="submit" class="btn btn-primary add-coupon-ajax wp-block-search__button"><?php echo __( 'APPLY', 'traveler-childtheme' ); ?></button>
 				<div class="alert alert-danger hidden"></div>
 			<?php } else { ?>
-				<button type="submit" class="btn btn-primary wp-block-search__button"><?php echo __( 'APPLY', 'traveler' ); ?></button>
+				<button type="submit" class="btn btn-primary wp-block-search__button"><?php echo __( 'APPLY', 'traveler-childtheme' ); ?></button>
 			<?php } ?>
 		</div>
 	</form>
@@ -397,7 +397,7 @@ if ( isset( $item_id ) and $item_id ) :
 			<?php if ( ! empty( $adult_number ) && $adult_number > 0 ) { ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Adult Price', 'traveler' ); ?>
+					<?php echo __( 'Adult Price', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
@@ -413,7 +413,7 @@ if ( isset( $item_id ) and $item_id ) :
 			<?php if ( ! empty( $child_number ) && $child_number > 0 ) { ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Children Price', 'traveler' ); ?>
+					<?php echo __( 'Children Price', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
@@ -429,7 +429,7 @@ if ( isset( $item_id ) and $item_id ) :
 			<?php if ( ! empty( $infant_number ) && $infant_number > 0 ) { ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Infant Price', 'traveler' ); ?>
+					<?php echo __( 'Infant Price', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
@@ -445,7 +445,7 @@ if ( isset( $item_id ) and $item_id ) :
 		<?php } else { ?>
 			<li>
 				<span class="label">
-					<?php echo __( 'Price', 'traveler' ); ?>
+					<?php echo __( 'Price', 'traveler-childtheme' ); ?>
 				</span>
 				<span class="value">
 					<?php
@@ -465,9 +465,9 @@ if ( isset( $item_id ) and $item_id ) :
 			<li>
 				<span class="label">
 					<?php if ( $tour_price_by === 'person' ) : ?>
-						<?php echo __( 'Discount/Person', 'traveler' ); ?>
+						<?php echo __( 'Discount/Person', 'traveler-childtheme' ); ?>
 					<?php else : ?>
-						<?php echo __( 'Discount', 'traveler' ); ?>
+						<?php echo __( 'Discount', 'traveler-childtheme' ); ?>
 					<?php endif; ?>
 				</span>
 				<span class="value">
@@ -489,18 +489,18 @@ if ( isset( $item_id ) and $item_id ) :
 		if ( $total_bulk_discount > 0 ) {
 			?>
 				<li>
-					<span class="label"><?php echo __( 'Bulk Discount', 'traveler' ); ?></span>
+					<span class="label"><?php echo __( 'Bulk Discount', 'traveler-childtheme' ); ?></span>
 					<span class="value"> - <?php echo TravelHelper::format_money( floatval( $total_bulk_discount ) ); ?></span>
 				</li>
 			<?php
 		}
 		?>
 
-		<li><span class="label"><?php echo __( 'Subtotal', 'traveler' ); ?></span><span class="value"><?php echo TravelHelper::format_money( $origin_price ); ?></span></li>
+		<li><span class="label"><?php echo __( 'Subtotal', 'traveler-childtheme' ); ?></span><span class="value"><?php echo TravelHelper::format_money( $origin_price ); ?></span></li>
 
 		<?php if ( $check_extra ) : ?>
 			<li>
-				<span class="label"><?php echo __( 'Extra Price', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Extra Price', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $extra_price ); ?></span>
 			</li>
 		<?php endif; ?>
@@ -508,25 +508,25 @@ if ( isset( $item_id ) and $item_id ) :
 		<!--Package Amount-->
 		<?php if ( is_array( $hotel_package ) && count( $hotel_package ) ) : ?>
 			<li>
-				<span class="label"><?php echo __( 'Hotel Package', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Hotel Package', 'traveler-childtheme' ); ?></span>
 			<span class="value"><?php echo TravelHelper::format_money( $hotel_package_price ); ?></span>
 			</li>
 		<?php endif; ?>
 		<?php if ( is_array( $activity_package ) && count( $activity_package ) ) : ?>
 			<li>
-				<span class="label"><?php echo __( 'Activity Package', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Activity Package', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $activity_package_price ); ?></span>
 			</li>
 		<?php endif; ?>
 		<?php if ( is_array( $car_package ) && count( $car_package ) ) : ?>
 			<li>
-				<span class="label"><?php echo __( 'Car Package', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Car Package', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $car_package_price ); ?></span>
 			</li>
 		<?php endif; ?>
 		<?php if ( is_array( $flight_package ) && count( $flight_package ) ) : ?>
 			<li>
-				<span class="label"><?php echo __( 'Flight Package', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Flight Package', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $flight_package_price ); ?></span>
 			</li>
 		<?php endif; ?>
@@ -536,9 +536,9 @@ if ( isset( $item_id ) and $item_id ) :
 		if ( ! empty( STPrice::getTax() ) && ( STPrice::getTax() ) > 0 ) {
 			?>
 				<?php if ( st()->get_option( 'st_tax_include_enable', 'off' ) == 'on' ) : ?>
-					<li><span class="label"><?php echo __( 'Tax included', 'traveler' ); ?></span><span class="value"><?php echo STPrice::getTax() . ' %'; ?></span></li>
+					<li><span class="label"><?php echo __( 'Tax included', 'traveler-childtheme' ); ?></span><span class="value"><?php echo STPrice::getTax() . ' %'; ?></span></li>
 				<?php else : ?>
-					<li><span class="label"><?php echo __( 'Tax', 'traveler' ); ?></span><span class="value"><?php echo STPrice::getTax() . ' %'; ?></span></li>
+					<li><span class="label"><?php echo __( 'Tax', 'traveler-childtheme' ); ?></span><span class="value"><?php echo STPrice::getTax() . ' %'; ?></span></li>
 				<?php endif; ?>
 			<?php
 		}
@@ -581,11 +581,11 @@ if ( isset( $item_id ) and $item_id ) :
 			}
 			?>
 			<li>
-				<span class="label"><?php echo __( 'Total', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Total', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $price_with_tax ); ?></span>
 			</li>
 			<li>
-				<span class="label"><?php echo __( 'Deposit', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Deposit', 'traveler-childtheme' ); ?></span>
 				<span class="value">
 					<?php echo TravelHelper::format_money( $deposit_price ); ?>
 				</span>
@@ -603,12 +603,12 @@ if ( isset( $item_id ) and $item_id ) :
 				$total_price = $total_price + $item['data']['booking_fee_price'];
 				?>
 			<li>
-				<span class="label"><?php echo __( 'Fee', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Fee', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $item['data']['booking_fee_price'] ); ?></span>
 			</li>
 			<?php } ?>
 			<li class="payment-amount">
-				<span class="label"><?php echo __( 'Pay Amount', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Pay Amount', 'traveler-childtheme' ); ?></span>
 				<span class="value">
 						<?php echo TravelHelper::format_money( $total_price ); ?>
 				</span>
@@ -620,12 +620,12 @@ if ( isset( $item_id ) and $item_id ) :
 				$price_with_tax = $price_with_tax + $item['data']['booking_fee_price'];
 				?>
 				<li>
-					<span class="label"><?php echo __( 'Fee', 'traveler' ); ?></span>
+					<span class="label"><?php echo __( 'Fee', 'traveler-childtheme' ); ?></span>
 					<span class="value"><?php echo TravelHelper::format_money( $item['data']['booking_fee_price'] ); ?></span>
 				</li>
 			<?php } ?>
 			<li class="payment-amount">
-				<span class="label"><?php echo __( 'Pay Amount', 'traveler' ); ?></span>
+				<span class="label"><?php echo __( 'Pay Amount', 'traveler-childtheme' ); ?></span>
 				<span class="value"><?php echo TravelHelper::format_money( $price_with_tax ); ?></span>
 			</li>
 		<?php endif; ?>

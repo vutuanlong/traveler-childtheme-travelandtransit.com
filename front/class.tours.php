@@ -44,7 +44,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			?>
 			<span
 				class="label">
-				<?php echo esc_html__( 'from', 'traveler' ) ?>
+				<?php echo esc_html__( 'from', 'traveler-childtheme' ) ?>
 			</span>
 			<span
 				class="value">
@@ -60,7 +60,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			<?php
 			if ( $item_id <= 0 || get_post_type( $item_id ) != 'st_tours' ) {
 				wp_send_json([
-					'message'    => __( 'This tour is not available.', 'traveler' ),
+					'message'    => __( 'This tour is not available.', 'traveler-childtheme' ),
 					'price_from' => $price_from,
 				]);
 				die();
@@ -95,14 +95,14 @@ if ( ! class_exists( 'STTourNew' ) ) {
 
 			if ( ! $adult_number and ! $child_number and ! $infant_number ) {
 				wp_send_json([
-					'message'    => __( 'Please select at least one person.', 'traveler' ),
+					'message'    => __( 'Please select at least one person.', 'traveler-childtheme' ),
 					'price_from' => $price_from,
 				]);
 				die();
 			}
 			if ( $adult_number + $child_number + $infant_number < $min_number ) {
 				wp_send_json([
-					'message'    => sprintf( __( 'Min number of people for this tour is %d people', 'traveler' ), $min_number ),
+					'message'    => sprintf( __( 'Min number of people for this tour is %d people', 'traveler-childtheme' ), $min_number ),
 					'price_from' => $price_from,
 				]);
 				die();
@@ -114,20 +114,20 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			if ( $max_number > 0 ) {
 				if ( $adult_number + $child_number + $infant_number > $max_number ) {
 					wp_send_json([
-						'message'    => sprintf( __( 'Max of people for this tour is %d people', 'traveler' ), $max_number ),
+						'message'    => sprintf( __( 'Max of people for this tour is %d people', 'traveler-childtheme' ), $max_number ),
 						'price_from' => $price_from,
 					]);
 					die();
 				}
 			}
 			if ( ! $check_in || ! $check_out ) {
-				wp_send_json( [ 'message' => __( 'Select a day in the calendar.', 'traveler' ) ] );
+				wp_send_json( [ 'message' => __( 'Select a day in the calendar.', 'traveler-childtheme' ) ] );
 				die();
 			}
 			if ( $tour_price_by != 'fixed_depart' ) {
 				$compare = TravelHelper::dateCompare( $today, $check_in );
 				if ( $compare < 0 ) {
-					wp_send_json( [ 'message' => __( 'This tour has expired', 'traveler' ) ] );
+					wp_send_json( [ 'message' => __( 'This tour has expired', 'traveler-childtheme' ) ] );
 					die();
 				}
 			}
@@ -135,7 +135,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			$period         = STDate::dateDiff( $today, $check_in );
 			if ( $period < $booking_period ) {
 				wp_send_json([
-					'message'    => sprintf( __( 'This tour allow minimum booking is %d day(s)', 'traveler' ), $booking_period ),
+					'message'    => sprintf( __( 'This tour allow minimum booking is %d day(s)', 'traveler-childtheme' ), $booking_period ),
 					'price_from' => $price_from,
 				]);
 				die();
@@ -145,7 +145,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 
 				if ( ! $tour_available ) {
 					wp_send_json([
-						'message'    => __( 'The check in, check out day is invalid or this tour not available.', 'traveler' ),
+						'message'    => __( 'The check in, check out day is invalid or this tour not available.', 'traveler-childtheme' ),
 						'price_from' => $price_from,
 					]);
 					die();
@@ -162,7 +162,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 					if ( $tour_price_by == 'fixed' ) {
 						if ( ! empty( $result ) && ! empty( trim( $starttime ) ) ) {
 							wp_send_json([
-								'message'    => sprintf( __( 'This tour is not available.', 'traveler' ) ),
+								'message'    => sprintf( __( 'This tour is not available.', 'traveler-childtheme' ) ),
 								'price_from' => $price_from,
 							]);
 						}
@@ -178,12 +178,12 @@ if ( ! class_exists( 'STTourNew' ) ) {
 					if ( $free_people < ( $adult_number + $child_number + $infant_number ) ) {
 						if ( empty( trim( $starttime ) ) ) {
 							wp_send_json([
-								'message'    => sprintf( __( 'This tour is only available for %d people', 'traveler' ), $free_people ),
+								'message'    => sprintf( __( 'This tour is only available for %d people', 'traveler-childtheme' ), $free_people ),
 								'price_from' => $price_from,
 							]);
 						} else {
 							wp_send_json([
-								'message'    => sprintf( __( 'This tour is only available for %1$d people at %2$s', 'traveler' ), $free_people, $starttime ),
+								'message'    => sprintf( __( 'This tour is only available for %1$d people at %2$s', 'traveler-childtheme' ), $free_people, $starttime ),
 								'price_from' => $price_from,
 							]);
 						}
@@ -201,7 +201,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 					$free_people = TourHelper::getFreePeopleTourFixedDepart( $tour_origin, strtotime( $check_in ), strtotime( $check_out ) );
 					if ( $free_people < ( $adult_number + $child_number + $infant_number ) ) {
 						wp_send_json([
-							'message'    => sprintf( __( 'This tour is only available for %d people', 'traveler' ), $free_people ),
+							'message'    => sprintf( __( 'This tour is only available for %d people', 'traveler-childtheme' ), $free_people ),
 							'price_from' => $price_from,
 						]);
 					}
@@ -345,7 +345,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 
 			$data['ori_price'] = $total_price + $extra_price + $package_hotel_price + $package_activity_price + $package_car_price + $package_flight_price;
 			$price_new_html    = TravelHelper::format_money( $data['ori_price'] );
-			$html              = '<div id="total-text"><h5>' . __( 'Total', 'traveler' ) . '</h5></div>
+			$html              = '<div id="total-text"><h5>' . __( 'Total', 'traveler-childtheme' ) . '</h5></div>
 					<div id="total-value">
 						<div class="st-price-origin d-flex align-self-end">
 							<span class="price"><span class="value"><span class="text-lg lh1em item "> ' . esc_html( $price_new_html ) . '</span></span></span>
@@ -366,7 +366,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			$pass_validate = true;
 			$item_id       = STInput::request( 'item_id', '' );
 			if ( $item_id <= 0 || get_post_type( $item_id ) != 'st_tours' ) {
-				STTemplate::set_message( __( 'This tour is not available..', 'traveler' ), 'danger' );
+				STTemplate::set_message( __( 'This tour is not available..', 'traveler-childtheme' ), 'danger' );
 				$pass_validate = false;
 				return false;
 			}
@@ -403,25 +403,25 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			$starttime_data  = AvailabilityHelper::_get_starttime_tour_by_date( $item_id, strtotime( $format_check_in ) );
 
 			if ( ! empty( $starttime_data[0]->starttime ) && empty( $starttime ) ) {
-				STTemplate::set_message( __( 'Start time is over.', 'traveler' ), 'danger' );
+				STTemplate::set_message( __( 'Start time is over.', 'traveler-childtheme' ), 'danger' );
 				$pass_validate = false;
 				return false;
 			}
 
 			if ( ! $adult_number and ! $child_number and ! $infant_number ) {
-				STTemplate::set_message( __( 'Please select at least one person.', 'traveler' ), 'danger' );
+				STTemplate::set_message( __( 'Please select at least one person.', 'traveler-childtheme' ), 'danger' );
 				$pass_validate = false;
 				return false;
 			}
 			if ( $adult_number + $child_number + $infant_number < $min_number ) {
-				STTemplate::set_message( sprintf( __( 'Min number of people for this tour is %d people', 'traveler' ), $min_number ), 'danger' );
+				STTemplate::set_message( sprintf( __( 'Min number of people for this tour is %d people', 'traveler-childtheme' ), $min_number ), 'danger' );
 				$pass_validate = false;
 				return false;
 			}
 
 			if ( empty( STInput::request( 'disable_require_name' ) ) ) {
 				if ( ! st_validate_guest_name( $tour_origin, $adult_number, $child_number, 0 ) ) {
-					STTemplate::set_message( __( 'Please enter the Guest Name', 'traveler' ), 'danger' );
+					STTemplate::set_message( __( 'Please enter the Guest Name', 'traveler-childtheme' ), 'danger' );
 					$pass_validate = false;
 					return false;
 				}
@@ -433,20 +433,20 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			 * */
 			if ( $max_number > 0 ) {
 				if ( $adult_number + $child_number + $infant_number > $max_number ) {
-					STTemplate::set_message( sprintf( __( 'Max of people for this tour is %d people', 'traveler' ), $max_number ), 'danger' );
+					STTemplate::set_message( sprintf( __( 'Max of people for this tour is %d people', 'traveler-childtheme' ), $max_number ), 'danger' );
 					$pass_validate = false;
 					return false;
 				}
 			}
 			if ( ! $check_in || ! $check_out ) {
-				STTemplate::set_message( __( 'Select a day in the calendar.', 'traveler' ), 'danger' );
+				STTemplate::set_message( __( 'Select a day in the calendar.', 'traveler-childtheme' ), 'danger' );
 				$pass_validate = false;
 				return false;
 			}
 			if ( $tour_price_by != 'fixed_depart' ) {
 				$compare = TravelHelper::dateCompare( $today, $check_in );
 				if ( $compare < 0 ) {
-					STTemplate::set_message( __( 'This tour has expired', 'traveler' ), 'danger' );
+					STTemplate::set_message( __( 'This tour has expired', 'traveler-childtheme' ), 'danger' );
 					$pass_validate = false;
 					return false;
 				}
@@ -454,14 +454,14 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			$booking_period = intval( get_post_meta( $item_id, 'tours_booking_period', true ) );
 			$period         = STDate::dateDiff( $today, $check_in );
 			if ( $period < $booking_period ) {
-				STTemplate::set_message( sprintf( __( 'This tour allow minimum booking is %d day(s)', 'traveler' ), $booking_period ), 'danger' );
+				STTemplate::set_message( sprintf( __( 'This tour allow minimum booking is %d day(s)', 'traveler-childtheme' ), $booking_period ), 'danger' );
 				$pass_validate = false;
 				return false;
 			}
 			if ( $tour_price_by != 'fixed_depart' ) {
 				$tour_available = TourHelper::checkAvailableTour( $tour_origin, strtotime( $check_in ), strtotime( $check_out ) );
 				if ( ! $tour_available ) {
-					STTemplate::set_message( __( 'The check in, check out day is invalid or this tour not available.', 'traveler' ), 'danger' );
+					STTemplate::set_message( __( 'The check in, check out day is invalid or this tour not available.', 'traveler-childtheme' ), 'danger' );
 					$pass_validate = false;
 					return false;
 				}
@@ -476,7 +476,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 					}
 					if ( $tour_price_by == 'fixed' ) {
 						if ( ! empty( $result ) && ! empty( trim( $starttime ) ) ) {
-							STTemplate::set_message( sprintf( __( 'This tour is not available.', 'traveler' ) ), 'danger' );
+							STTemplate::set_message( sprintf( __( 'This tour is not available.', 'traveler-childtheme' ) ), 'danger' );
 							$pass_validate = false;
 							return false;
 						}
@@ -490,9 +490,9 @@ if ( ! class_exists( 'STTourNew' ) ) {
 					 * */
 					if ( $free_people < ( $adult_number + $child_number + $infant_number ) ) {
 						if ( empty( trim( $starttime ) ) ) {
-							STTemplate::set_message( sprintf( __( 'This tour is only available for %d people', 'traveler' ), $free_people ), 'danger' );
+							STTemplate::set_message( sprintf( __( 'This tour is only available for %d people', 'traveler-childtheme' ), $free_people ), 'danger' );
 						} else {
-							STTemplate::set_message( sprintf( __( 'This tour is only available for %1$d people at %2$s', 'traveler' ), $free_people, $starttime ), 'danger' );
+							STTemplate::set_message( sprintf( __( 'This tour is only available for %1$d people at %2$s', 'traveler-childtheme' ), $free_people, $starttime ), 'danger' );
 						}
 						$pass_validate = false;
 						return false;
@@ -507,7 +507,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 				if ( $max_number > 0 ) {
 					$free_people = TourHelper::getFreePeopleTourFixedDepart( $tour_origin, strtotime( $check_in ), strtotime( $check_out ) );
 					if ( $free_people < ( $adult_number + $child_number + $infant_number ) ) {
-						STTemplate::set_message( sprintf( __( 'This tour is only available for %d people', 'traveler' ), $free_people ), 'danger' );
+						STTemplate::set_message( sprintf( __( 'This tour is only available for %d people', 'traveler-childtheme' ), $free_people ), 'danger' );
 						$pass_validate = false;
 						return false;
 					}
@@ -522,7 +522,7 @@ if ( ! class_exists( 'STTourNew' ) ) {
 			/*
 			if(!st_validate_guest_name($tour_origin,$adult_number,$child_number,$infant_number))
 				{
-				STTemplate::set_message(esc_html__('Please enter the Guest Name','traveler'), 'danger');
+				STTemplate::set_message(esc_html__('Please enter the Guest Name','traveler-childtheme'), 'danger');
 				$pass_validate = FALSE;
 				return FALSE;
 				} */

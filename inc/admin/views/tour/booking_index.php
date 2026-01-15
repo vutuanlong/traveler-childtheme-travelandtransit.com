@@ -36,7 +36,7 @@ $paging['total']   = $total;
 $paging['current'] = $page;
 
 echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
-echo '<h2>' . __( 'Tour Booking', 'traveler' ) . '</h2>';
+echo '<h2>' . __( 'Tour Booking', 'traveler-childtheme' ) . '</h2>';
 
 STAdmin::message();
 
@@ -46,14 +46,14 @@ STAdmin::message();
 	<?php wp_nonce_field( 'shb_action', 'shb_field' ) ?>
 	<div class="tablenav top">
 		<div class="alignleft actions bulkactions">
-			<label for="bulk-action-selector-top" class="screen-reader-text"><?php _e( 'Select bulk action', 'traveler' ) ?></label><select name="st_action" id="bulk-action-selector-top">
-				<option value="-1" selected="selected"><?php _e( 'Bulk Actions', 'traveler' ) ?></option>
-				<option value="delete"><?php _e( 'Delete Permanently', 'traveler' ) ?></option>
+			<label for="bulk-action-selector-top" class="screen-reader-text"><?php _e( 'Select bulk action', 'traveler-childtheme' ) ?></label><select name="st_action" id="bulk-action-selector-top">
+				<option value="-1" selected="selected"><?php _e( 'Bulk Actions', 'traveler-childtheme' ) ?></option>
+				<option value="delete"><?php _e( 'Delete Permanently', 'traveler-childtheme' ) ?></option>
 			</select>
-			<input type="submit" name="" id="doaction" class="button action" value="<?php _e( 'Apply', 'traveler' ) ?>">
+			<input type="submit" name="" id="doaction" class="button action" value="<?php _e( 'Apply', 'traveler-childtheme' ) ?>">
 		</div>
 		<div class="tablenav-pages">
-			<span class="displaying-num"><?php echo sprintf( _n( '%s item', '%s items', $data['total'] ), $data['total'], 'traveler' ) ?></span>
+			<span class="displaying-num"><?php echo sprintf( _n( '%s item', '%s items', $data['total'] ), $data['total'], 'traveler-childtheme' ) ?></span>
 			<?php echo paginate_links( $paging ) ?>
 		</div>
 	</div>
@@ -62,45 +62,45 @@ STAdmin::message();
 		<thead>
 			<tr>
 				<th class="manage-column column-cb check-column">
-					<label class="screen-reader-text" for="cb-select-all-1"><?php _e( 'Select All', 'traveler' ) ?></label>
+					<label class="screen-reader-text" for="cb-select-all-1"><?php _e( 'Select All', 'traveler-childtheme' ) ?></label>
 					<input type="checkbox" id="cb-select-all-1">
 				</th>
 				<th class="manage-column">
-					<a href="#"><span><?php _e( 'Customer', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Customer', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 
 				<th class="manage-column">
-					<a href="#"><span><?php _e( 'Name', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Name', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 
 				<th class="manage-column">
-					<a href="#"><span><?php _e( 'Tour Type', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Tour Type', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 
 				<th class="manage-column">
-					<a href="#"><span><?php _e( 'Date', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Date', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 
-				<th class="manage-column"><a href="#"><?php _e( 'Adult Number', 'traveler' ) ?></a></th>
-				<th class="manage-column"><a href="#"><?php _e( 'Child Number', 'traveler' ) ?></a></th>
-				<th class="manage-column"><a href="#"><?php _e( 'Package', 'traveler' ) ?></a></th>
+				<th class="manage-column"><a href="#"><?php _e( 'Adult Number', 'traveler-childtheme' ) ?></a></th>
+				<th class="manage-column"><a href="#"><?php _e( 'Child Number', 'traveler-childtheme' ) ?></a></th>
+				<th class="manage-column"><a href="#"><?php _e( 'Package', 'traveler-childtheme' ) ?></a></th>
 
 				<th class="manage-column" width="7%">
-					<a href="#"><span><?php _e( 'Pay Amount', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Pay Amount', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 				<th class="manage-column" width="7%">
-					<a href="#"><span><?php _e( 'Coupon code', 'traveler' ) ?></span></a>
+					<a href="#"><span><?php _e( 'Coupon code', 'traveler-childtheme' ) ?></span></a>
 				</th>
 				<th class="manage-column" width="10%">
-					<a href="#"><span><?php _e( 'Created Date', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Created Date', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 
 				<th class="manage-column " width="7%">
-					<a href="#"><span><?php _e( 'Status', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Status', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 
 				<th class="manage-column " width="10%">
-					<a href="#"><span><?php _e( 'Payment Method', 'traveler' ) ?></span><span class="sorting-indicator"></span></a>
+					<a href="#"><span><?php _e( 'Payment Method', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
 				</th>
 			</tr>
 
@@ -148,9 +148,9 @@ STAdmin::message();
 							</strong>
 
 							<div class="row-actions">
-								<a href="<?php echo admin_url( 'edit.php?post_type=st_tours&page=st_tours_booking&section=edit_order_item&order_item_id=' . $post_id ); ?>"><?php _e( 'Edit', 'traveler' ) ?></a>
+								<a href="<?php echo admin_url( 'edit.php?post_type=st_tours&page=st_tours_booking&section=edit_order_item&order_item_id=' . $post_id ); ?>"><?php _e( 'Edit', 'traveler-childtheme' ) ?></a>
 								|
-								<a href="<?php echo admin_url( 'edit.php?post_type=st_tours&page=st_tours_booking&section=resend_email_tours&order_item_id=' . $post_id ); ?>"><?php _e( 'Resend Email', 'traveler' ) ?></a>
+								<a href="<?php echo admin_url( 'edit.php?post_type=st_tours&page=st_tours_booking&section=resend_email_tours&order_item_id=' . $post_id ); ?>"><?php _e( 'Resend Email', 'traveler-childtheme' ) ?></a>
 								<?php do_action( 'st_after_order_page_admin_information_table', $post_id ) ?>
 							</div>
 
@@ -168,11 +168,11 @@ STAdmin::message();
 						if ( $type_tour == 'specific_date' ) {
 							?>
 							<td class="post-title page-title column-title">
-								<?php _e( 'Specific Date', 'traveler' ) ?>
+								<?php _e( 'Specific Date', 'traveler-childtheme' ) ?>
 							</td>
 						<?php } else { ?>
 							<td class="post-title page-title column-title">
-								<?php _e( 'Daily Tour', 'traveler' ) ?>
+								<?php _e( 'Daily Tour', 'traveler-childtheme' ) ?>
 							</td>
 						<?php } ?>
 
@@ -185,17 +185,17 @@ STAdmin::message();
 							$duration = '';
 							if ( $type_tour == 'daily_tour' ) {
 								$duration = get_post_meta( $post_id, 'duration', true );
-								echo __( 'Duration', 'traveler' ) . ': ' . $duration;
+								echo __( 'Duration', 'traveler-childtheme' ) . ': ' . $duration;
 							} else {
 								$diff = STDate::dateDiff( get_post_meta( $post_id, 'check_in', true ), get_post_meta( $post_id, 'check_out', true ) );
 								if ( ! empty( $diff ) && $diff ) {
 									if ( $diff > 1 ) {
-										$duration .= esc_attr( $diff ) . ' ' . __( 'days', 'traveler' );
+										$duration .= esc_attr( $diff ) . ' ' . __( 'days', 'traveler-childtheme' );
 									} else {
-										$duration .= esc_attr( $diff ) . ' ' . __( 'day', 'traveler' );
+										$duration .= esc_attr( $diff ) . ' ' . __( 'day', 'traveler-childtheme' );
 									}
 								}
-								echo __( 'Duration', 'traveler' ) . ': ' . $duration;
+								echo __( 'Duration', 'traveler-childtheme' ) . ': ' . $duration;
 							}
 
 							?>
@@ -251,7 +251,7 @@ STAdmin::message();
 
 	<div class="tablenav bottom">
 		<div class="tablenav-pages">
-			<span class="displaying-num"><?php echo sprintf( _n( '%s item', '%s items', $data['total'] ), $data['total'], 'traveler' ) ?></span>
+			<span class="displaying-num"><?php echo sprintf( _n( '%s item', '%s items', $data['total'] ), $data['total'], 'traveler-childtheme' ) ?></span>
 			<?php echo paginate_links( $paging ) ?>
 		</div>
 	</div>
