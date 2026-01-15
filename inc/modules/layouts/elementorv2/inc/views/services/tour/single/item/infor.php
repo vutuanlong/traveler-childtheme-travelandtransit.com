@@ -13,7 +13,7 @@ $icon_language_single_tour = st()->get_option('icon_language_single_tour', '<i c
                     <?php echo htmlspecialchars_decode($icon_duration_single_tour);?>
                 </div>
                 <div class="info">
-                    <div class="name"><?php echo __('Duration', 'traveler'); ?></div>
+                    <div class="name"><?php echo __('Duration', 'traveler-childtheme'); ?></div>
                     <p class="value">
                         <?php
                         $duration = get_post_meta(get_the_ID(), 'duration_day', true);
@@ -29,14 +29,14 @@ $icon_language_single_tour = st()->get_option('icon_language_single_tour', '<i c
                     <?php echo htmlspecialchars_decode($icon_tourtype_single_tour);?>
                 </div>
                 <div class="info">
-                    <div class="name"><?php echo __('Tour Type', 'traveler'); ?></div>
+                    <div class="name"><?php echo __('Tour Type', 'traveler-childtheme'); ?></div>
                     <p class="value">
                         <?php
 
                         if ($tour_type == 'daily_tour') {
-                            echo __('Daily Tour', 'traveler');
+                            echo __('Daily Tour', 'traveler-childtheme');
                         } else {
-                            echo __('Specific Tour', 'traveler');
+                            echo __('Specific Tour', 'traveler-childtheme');
                         }
                         ?>
                     </p>
@@ -49,7 +49,7 @@ $icon_language_single_tour = st()->get_option('icon_language_single_tour', '<i c
                     <?php echo htmlspecialchars_decode($icon_duration_single_tour);?>
                 </div>
                 <div class="info">
-                    <div class="name"><?php echo __('Start Time', 'traveler'); ?></div>
+                    <div class="name"><?php echo __('Start Time', 'traveler-childtheme'); ?></div>
                     <p class="value">
                         <?php
                         $start_time = get_post_meta(get_the_ID(), 'start_time_custom', true);
@@ -65,7 +65,7 @@ $icon_language_single_tour = st()->get_option('icon_language_single_tour', '<i c
                     <?php echo htmlspecialchars_decode($icon_language_single_tour);?>
                 </div>
                 <div class="info">
-                    <div class="name"><?php echo __('Languages', 'traveler'); ?></div>
+                    <div class="name"><?php echo __('Languages', 'traveler-childtheme'); ?></div>
                     <p class="value">
                         <?php
                         $term_list = wp_get_post_terms(get_the_ID(), 'languages');
