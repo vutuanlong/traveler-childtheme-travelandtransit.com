@@ -17,31 +17,42 @@ Template:       traveler
     border-color: #e1e1e1;
 }
 
+.st_content_list_package {
+	border-radius: 20px;
+	border: 1px solid #e1e1e1;
+}
+
 .st_content_list_package table{
     width: 100%;
     text-align: center;
-    border-spacing: 2px;
-    border-collapse: separate;
-    margin-bottom: 20px;
+    /* border-spacing: 2px; */
+    /* border-collapse: separate; */
+    /* margin-bottom: 20px; */
+
+	border: 1px solid #e1e1e1;
+	border-radius: 20px;
+	overflow: hidden;
 }
 .st_content_list_package table tr th {
     padding: 13px 0px;
     font-size: 16px;
     font-weight: normal;
-	background: #16283a;
-    color: #ffffff;
+	/* background: #16283a;
+    color: #ffffff; */
     font-size: 14px;
 }
 
 .st_content_list_package table tr:nth-child(odd) {
-    color: #444444;
+	color: var(--heading-color);
 }
 .st_content_list_package table tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
 }
 
-.st_content_list_package table td{
+.st_content_list_package table td,
+.st_content_list_package table th {
     padding: 10px 0;
+	border: 1px solid #e1e1e1;
 }
 
 .st_content_list_package table tr:nth-child(even) {
