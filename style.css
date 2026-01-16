@@ -150,3 +150,7 @@ Template:       traveler
 .single-st_tours .st-package-popup .item .footer button {
 	padding: 10px 30px;
 }
+
+.single-st_tours #st-content-wrapper.st-style-elementor .form-guest-search {
+	display: none;
+}
