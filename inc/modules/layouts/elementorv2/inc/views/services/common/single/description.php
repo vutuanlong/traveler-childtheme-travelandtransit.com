@@ -11,7 +11,7 @@ if ( $list_package && isset( $list_package[0] ) && $list_package[0]['title'] ) {
 					<thead>
 						<tr>
 							<th class="center title_td">
-								<span><strong><?php echo __( 'Name Vehicle', 'traveler-childtheme' ); ?></strong></span>
+								<span><strong><?php echo __( 'Vehicle type', 'traveler-childtheme' ); ?></strong></span>
 							</th>
 							<th class="center title_td">
 								<span><strong><?php echo __( 'Price', 'traveler-childtheme' ); ?></strong></span>
