@@ -131,7 +131,7 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 					$price_ori            = $people_price_package['package_price_fixed'];
 					?>
 					<li>
-						<span class="label"><?php echo __( 'Package', 'traveler-childtheme' ); ?></span>
+						<span class="label"><?php echo __( 'Vehicle', 'traveler-childtheme' ); ?></span>
 						<span class="value">
 							<?php echo esc_html( $package_name ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?>
 						</span>
@@ -142,36 +142,42 @@ if ( ! empty( $extras['value'] ) && is_array( array_values( $extras['value'] ) )
 		}
 		?>
 
-		<?php if ( $adult_number ) { ?>
-			<li>
-				<span class="label">
-					<?php _e( 'No. Adult', 'traveler-childtheme' ) ?>
-				</span>
-				<span class="value">
-					<?php echo esc_html( $adult_number ) ?>
-				</span>
-			</li>
-		<?php } ?>
-		<?php if ( $child_number ) { ?>
-			<li>
-				<span class="label">
-					<?php _e( 'No. Children', 'traveler-childtheme' ) ?>
-				</span>
-				<span class="value">
-					<?php echo esc_html( $child_number ) ?>
-				</span>
-			</li>
-		<?php } ?>
-		<?php if ( $infant_number ) { ?>
-			<li>
-				<span class="label">
-					<?php _e( 'No. Infant', 'traveler-childtheme' ) ?>
-				</span>
-				<span class="value">
-					<?php echo esc_html( $infant_number ) ?>
-				</span>
-			</li>
-		<?php } ?>
+		<?php
+		if ( empty( $package_name ) ) : ?>
+
+			<?php if ( $adult_number ) { ?>
+				<li>
+					<span class="label">
+						<?php _e( 'No. Adult', 'traveler-childtheme' ) ?>
+					</span>
+					<span class="value">
+						<?php echo esc_html( $adult_number ) ?>
+					</span>
+				</li>
+			<?php } ?>
+			<?php if ( $child_number ) { ?>
+				<li>
+					<span class="label">
+						<?php _e( 'No. Children', 'traveler-childtheme' ) ?>
+					</span>
+					<span class="value">
+						<?php echo esc_html( $child_number ) ?>
+					</span>
+				</li>
+			<?php } ?>
+			<?php if ( $infant_number ) { ?>
+				<li>
+					<span class="label">
+						<?php _e( 'No. Infant', 'traveler-childtheme' ) ?>
+					</span>
+					<span class="value">
+						<?php echo esc_html( $infant_number ) ?>
+					</span>
+				</li>
+			<?php } ?>
+
+		<?php endif; ?>
+
 
 		<?php
 		if ( $tour_price_type != 'fixed_depart' ) {

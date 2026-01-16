@@ -151,7 +151,7 @@ if ( isset( $item_id ) and $item_id ) :
 				$price_ori            = $people_price_package['package_price_fixed'];
 				?>
 				<li>
-					<span class="label"><?php echo __( 'Package', 'traveler-childtheme' ); ?></span>
+					<span class="label"><?php echo __( 'Vehicle', 'traveler-childtheme' ); ?></span>
 					<span class="value">
 						<?php echo esc_html( $package_name ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?>
 					</span>
@@ -161,49 +161,54 @@ if ( isset( $item_id ) and $item_id ) :
 			?>
 
 			<!--Add Info-->
-			<li class="ad-info">
-				<ul>
-					<?php if ( $adult_number ) { ?>
-						<li><span class="label"><?php echo __( 'Number of Adult', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $adult_number ); ?></span></li>
-					<?php } ?>
-					<?php if ( $child_number ) { ?>
-						<li><span class="label"><?php echo __( 'Number of Children', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $child_number ); ?></span></li>
-					<?php } ?>
-					<?php if ( $infant_number ) { ?>
-						<li><span class="label"><?php echo __( 'Number of Infant', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $infant_number ); ?></span></li>
-						<?php
-					}
-					if ( $check_extra ) {
-						?>
-						<li>
-							<span class="label"><?php echo __( 'Extra', 'traveler-childtheme' ); ?></span>
-						</li>
-						<li class="extra-value">
+			<?php
+			if ( empty( $package_name ) ) : ?>
+				<li class="ad-info">
+					<ul>
+						<?php if ( $adult_number ) { ?>
+							<li><span class="label"><?php echo __( 'Number of Adult', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $adult_number ); ?></span></li>
+						<?php } ?>
+						<?php if ( $child_number ) { ?>
+							<li><span class="label"><?php echo __( 'Number of Children', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $child_number ); ?></span></li>
+						<?php } ?>
+						<?php if ( $infant_number ) { ?>
+							<li><span class="label"><?php echo __( 'Number of Infant', 'traveler-childtheme' ); ?></span><span class="value"><?php echo esc_attr( $infant_number ); ?></span></li>
 							<?php
-							foreach ( $extras['value'] as $name => $number ) :
-								$number_item = intval( $extras['value'][ $name ] );
-								if ( $number_item <= 0 ) {
-									$number_item = 0;
-								}
-								if ( $number_item > 0 ) :
-									$price_item = floatval( $extras['price'][ $name ] );
-									if ( $price_item <= 0 ) {
-										$price_item = 0;
-									}
-									?>
-									<span class="pull-right">
-									<?php echo esc_html( $extras['title'][ $name ] ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_attr( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
-									</span> <br/>
-									<?php
-								endif;
-							endforeach;
+						}
+						if ( $check_extra ) {
 							?>
-						</li>
-						<?php
-					}
-					?>
-				</ul>
-			</li>
+							<li>
+								<span class="label"><?php echo __( 'Extra', 'traveler-childtheme' ); ?></span>
+							</li>
+							<li class="extra-value">
+								<?php
+								foreach ( $extras['value'] as $name => $number ) :
+									$number_item = intval( $extras['value'][ $name ] );
+									if ( $number_item <= 0 ) {
+										$number_item = 0;
+									}
+									if ( $number_item > 0 ) :
+										$price_item = floatval( $extras['price'][ $name ] );
+										if ( $price_item <= 0 ) {
+											$price_item = 0;
+										}
+										?>
+										<span class="pull-right">
+										<?php echo esc_html( $extras['title'][ $name ] ) . ' (' . TravelHelper::format_money( $price_item ) . ') x ' . esc_attr( $number_item ) . ' ' . __( 'Item(s)', 'traveler-childtheme' ); ?>
+										</span> <br/>
+										<?php
+									endif;
+								endforeach;
+								?>
+							</li>
+							<?php
+						}
+						?>
+					</ul>
+				</li>
+				<?php
+			endif;
+			?>
 
 			<?php
 

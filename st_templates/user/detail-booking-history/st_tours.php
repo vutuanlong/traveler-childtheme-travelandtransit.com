@@ -98,7 +98,7 @@ if ( ! empty( $data_price ) ) {
 						$price_ori            = $people_price_package['package_price_fixed'];
 						?>
 						<div class="item_booking_detail">
-							<strong><?php esc_html_e( 'Package: ', 'traveler-childtheme' ) ?></strong>
+							<strong><?php esc_html_e( 'Vehicle: ', 'traveler-childtheme' ) ?></strong>
 							<?php echo esc_html( $package_name ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?>
 						</div>
 						<?php
@@ -179,50 +179,52 @@ if ( ! empty( $data_price ) ) {
 				</div>
 				<?php } ?>
 				<div class="line col-md-12"></div>
-				<div class="col-md-6">
-					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'No. Adults :', 'traveler-childtheme' ) ?> </strong>
-						<?php echo get_post_meta( $order_id, 'adult_number', true ); ?>
+
+				<?php if ( empty( $package_name ) ) : ?>
+					<div class="col-md-6">
+						<div class="item_booking_detail">
+							<strong><?php esc_html_e( 'No. Adults :', 'traveler-childtheme' ) ?> </strong>
+							<?php echo get_post_meta( $order_id, 'adult_number', true ); ?>
+						</div>
 					</div>
-				</div>
-				<?php if ( $price_type == 'person' ) : ?>
-				<div class="col-md-6">
-					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Adult Price :', 'traveler-childtheme' ) ?> </strong>
-						<?php $adult_price = get_post_meta( $order_id, 'adult_price', true ); ?>
-						<?php echo TravelHelper::format_money( $adult_price ); ?>
-					</div>
-				</div>
-					<?php endif; ?>
-				<div class="col-md-6">
-					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'No. Children :', 'traveler-childtheme' ) ?> </strong>
-						<?php echo get_post_meta( $order_id, 'child_number', true ); ?>
-					</div>
-				</div>
 					<?php if ( $price_type == 'person' ) : ?>
-				<div class="col-md-6">
-					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Children Price :', 'traveler-childtheme' ) ?> </strong>
-						<?php $child_price = get_post_meta( $order_id, 'child_price', true ); ?>
-						<?php echo TravelHelper::format_money( $child_price ); ?>
+					<div class="col-md-6">
+						<div class="item_booking_detail">
+							<strong><?php esc_html_e( 'Adult Price :', 'traveler-childtheme' ) ?> </strong>
+							<?php $adult_price = get_post_meta( $order_id, 'adult_price', true ); ?>
+							<?php echo TravelHelper::format_money( $adult_price ); ?>
+						</div>
 					</div>
-				</div>
 					<?php endif; ?>
-				<div class="col-md-6">
-					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'No. Infant :', 'traveler-childtheme' ) ?> </strong>
-						<?php echo get_post_meta( $order_id, 'infant_number', true ); ?>
+					<div class="col-md-6">
+						<div class="item_booking_detail">
+							<strong><?php esc_html_e( 'No. Children :', 'traveler-childtheme' ) ?> </strong>
+							<?php echo get_post_meta( $order_id, 'child_number', true ); ?>
+						</div>
 					</div>
-				</div>
 					<?php if ( $price_type == 'person' ) : ?>
-				<div class="col-md-6">
-					<div class="item_booking_detail">
-						<strong><?php esc_html_e( 'Infant Price :', 'traveler-childtheme' ) ?> </strong>
-						<?php $infant_price = get_post_meta( $order_id, 'infant_price', true ); ?>
-						<?php echo TravelHelper::format_money( $infant_price ); ?>
+					<div class="col-md-6">
+						<div class="item_booking_detail">
+							<strong><?php esc_html_e( 'Children Price :', 'traveler-childtheme' ) ?> </strong>
+							<?php $child_price = get_post_meta( $order_id, 'child_price', true ); ?>
+							<?php echo TravelHelper::format_money( $child_price ); ?>
+						</div>
 					</div>
-				</div>
+					<?php endif; ?>
+					<div class="col-md-6">
+						<div class="item_booking_detail">
+							<strong><?php esc_html_e( 'No. Infant :', 'traveler-childtheme' ) ?> </strong>
+							<?php echo get_post_meta( $order_id, 'infant_number', true ); ?>
+						</div>
+					</div>
+					<?php if ( $price_type == 'person' ) : ?>
+					<div class="col-md-6">
+						<div class="item_booking_detail">
+							<strong><?php esc_html_e( 'Infant Price :', 'traveler-childtheme' ) ?> </strong>
+							<?php $infant_price = get_post_meta( $order_id, 'infant_price', true ); ?>
+							<?php echo TravelHelper::format_money( $infant_price ); ?>
+						</div>
+					</div>
 					<?php endif; ?>
 					<?php if ( $price_type == 'fixed' ) : ?>
 						<div class="col-md-6">
@@ -232,6 +234,10 @@ if ( ! empty( $data_price ) ) {
 							</div>
 						</div>
 					<?php endif; ?>
+
+				<?php endif; ?>
+
+
 				<?php
 				$extra_price = get_post_meta( $order_id, 'extra_price', true );
 				$extras      = get_post_meta( $order_id, 'extras', true );

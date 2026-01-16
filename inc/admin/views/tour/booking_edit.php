@@ -298,6 +298,35 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                         </div>
                                     </div>
                                 <?php endif; ?>
+
+
+								<?php
+                                //Add by custom
+								$key             = get_post_meta( $item_id, 'item_id', true );
+								$cart_info       = ( get_post_meta( $item_id, 'st_cart_info', true ) );
+								$item            = $cart_info[ $key ];
+								$package_select  = isset( $item['data']['package_name'] ) ? $item['data']['package_name'] : '';
+                                ?>
+
+								<div class="form-row">
+									<?php
+									if ( ! empty( $package_select ) ) :
+										$people_price_package = STPriceNew::getPeoplePriceByPackage( $item['data']['st_booking_id'], $package_select );
+										$price_ori            = $people_price_package['package_price_fixed'];
+										?>
+										<label class="form-label" for="">
+											<?php echo __( 'Vehicle', 'traveler-childtheme' ); ?>
+										</label>
+										<div class="controls">
+											<strong><?php echo esc_html( $package_select ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?></strong>
+										</div>
+										<?php
+									endif;
+									?>
+								</div>
+
+								<?php if ( empty( $package_select ) ) : ?>
+
                                 <div class="form-row">
                                     <label class="form-label"
                                            for="adult_number"><?php _e('No. Adults', 'traveler-childtheme') ?></label>
@@ -340,31 +369,6 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                     </div>
                                 </div>
 
-                                <?php
-                                //Add by custom
-								$key             = get_post_meta( $item_id, 'item_id', true );
-								$cart_info       = ( get_post_meta( $item_id, 'st_cart_info', true ) );
-								$item            = $cart_info[ $key ];
-								$package_select  = isset( $item['data']['package_name'] ) ? $item['data']['package_name'] : '';
-                                ?>
-
-								<div class="form-row">
-									<?php
-									if ( ! empty( $package_select ) ) :
-										$people_price_package = STPriceNew::getPeoplePriceByPackage( $item['data']['st_booking_id'], $package_select );
-										$price_ori            = $people_price_package['package_price_fixed'];
-										?>
-										<label class="form-label" for="">
-											<?php echo __( 'Package', 'traveler-childtheme' ); ?>
-										</label>
-										<div class="controls">
-											<strong><?php echo esc_html( $package_select ) . '( ' . TravelHelper::format_money( $price_ori ) . ' )'; ?></strong>
-										</div>
-										<?php
-									endif;
-									?>
-								</div>
-
                                 <div class="form-row">
                                     <label class="form-label"
                                            for=""><?php _e('Adult Price', 'traveler-childtheme') ?></label>
@@ -395,6 +399,10 @@ $cart_info = get_post_meta($item_id,'st_cart_detail',true);
                                         <strong><?php echo TravelHelper::format_money_from_db($infant_price, $currency) ?></strong>
                                     </div>
                                 </div>
+
+								<?php endif; ?>
+
+
                                 <?php st_admin_print_order_item_guest_name([
                                     'guest_name' => get_post_meta($item_id, 'guest_name', true),
                                     'guest_title' => get_post_meta($item_id, 'guest_title', true),

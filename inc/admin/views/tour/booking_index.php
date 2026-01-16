@@ -83,7 +83,7 @@ STAdmin::message();
 
 				<th class="manage-column"><a href="#"><?php _e( 'Adult Number', 'traveler-childtheme' ) ?></a></th>
 				<th class="manage-column"><a href="#"><?php _e( 'Child Number', 'traveler-childtheme' ) ?></a></th>
-				<th class="manage-column"><a href="#"><?php _e( 'Package', 'traveler-childtheme' ) ?></a></th>
+				<th class="manage-column"><a href="#"><?php _e( 'Vehicle', 'traveler-childtheme' ) ?></a></th>
 
 				<th class="manage-column" width="7%">
 					<a href="#"><span><?php _e( 'Pay Amount', 'traveler-childtheme' ) ?></span><span class="sorting-indicator"></span></a>
