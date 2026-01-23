@@ -1,5 +1,7 @@
 <?php
 $list_package = get_post_meta( get_the_ID(), 'package_list', true );
+$discount     = get_post_meta( get_the_ID(), 'discount', true );
+$discount_type = get_post_meta( get_the_ID(), 'discount_type', true );
 if ( $list_package && isset( $list_package[0] ) && $list_package[0]['title'] ) {
 
 	?>
@@ -19,11 +21,40 @@ if ( $list_package && isset( $list_package[0] ) && $list_package[0]['title'] ) {
 						</tr>
 					</thead>
 					<?php foreach ( $list_package as $packed ) : ?>
-						<?php if ( $packed['title'] ) : ?>
+						<?php if ( $packed['title'] ) :
+							$price_new = $packed['package_price_fixed'];
+							$price_new_sale = $price_new;
+							if ( ! empty( $discount_type ) && ( $discount > 0 ) ) {
+								if ( $discount < 0 ) {
+									$discount = 0;
+								}
+								if ( $discount > 100 && $discount_type == 'percent' ) {
+									$discount = 100;
+								}
+								switch ( $discount_type ) {
+									case 'amount':
+										$price_new_sale = $price_new - $discount;
+										break;
+									default:
+										$price_new_sale = $price_new - ( $price_new / 100 ) * $discount;
+										break;
+								}
+							}
+							?>
 							<tbody>
 								<tr>
 									<td class="center"><?php echo trim( $packed['title'] ); ?></td>
-									<td class="center"><?php echo TravelHelper::format_money( $packed['package_price_fixed'] ); ?></td>
+									<td class="center">
+										<?php
+
+										if ( $price_new_sale != $price_new ) {
+											echo '<span class="item onsale ">' . TravelHelper::format_money( $price_new ) . '</span>';
+										}
+
+										echo '<span class="item "> ' . TravelHelper::format_money( $price_new_sale ) . '</span>';
+
+										?>
+									</td>
 								</tr>
 							</tbody>
 
